@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://naah.com.mx/sitemap.xml

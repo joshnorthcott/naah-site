@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Naah — CRM inmobiliario para Yucatán</title>
+<meta name="description" content="El CRM para inmobiliarias de Mérida: cartera, prospectos, recorridos y el expediente que pide el notario. En español y en inglés. 14 días gratis, sin tarjeta.">
+<meta name="theme-color" content="#FAF7F0">
+<link rel="canonical" href="https://naah.com.mx/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Naah">
+<meta property="og:title" content="Naah — CRM inmobiliario para Yucatán">
+<meta property="og:description" content="Tu cartera, tus prospectos y tu papeleo en un solo lugar. Hecho para cómo se cierra una operación en Mérida.">
+<meta property="og:url" content="https://naah.com.mx/">
+<meta property="og:locale" content="es_MX">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231D2E27'/><text x='16' y='22' font-family='DM Sans,sans-serif' font-size='17' font-weight='700' fill='%23E1C790' text-anchor='middle'>N</text></svg>">
+
+<style>
+/* ============================================================
+   Naah — the same ink, paper and gold as the app, so the two
+   read as one family without the site pretending to be the
+   product.
+   ============================================================ */
+:root{
+  color-scheme: light;
+  --ground:#FAF7F0;
+  --paper:#FFFFFF;
+  --ink:#1D2E27;
+  --muted:#7C8A82;
+  --line:#E2D9C6;
+  --gold:#B8921F;
+  --gold-soft:#E1C790;
+  --gold-wash:#F7EFDD;
+  --good:#3E7A63;
+  --shadow:0 1px 2px rgba(29,46,39,.04), 0 8px 24px rgba(29,46,39,.05);
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --ground:#12100D;
+    --paper:#1A1815;
+    --ink:#F0EBE0;
+    --muted:#9A968C;
+    --line:#2E2A24;
+    --gold:#D7B45F;
+    --gold-soft:#8A6F2C;
+    --gold-wash:#241F16;
+    --good:#6FA98D;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --ground:#12100D; --paper:#1A1815; --ink:#F0EBE0; --muted:#9A968C;
+  --line:#2E2A24; --gold:#D7B45F; --gold-soft:#8A6F2C; --gold-wash:#241F16;
+  --good:#6FA98D; --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font:400 17px/1.6 "DM Sans", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.018em;font-weight:700}
+p{margin:0}
+a{color:inherit}
+
+/* --- top bar --- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--ground) 86%, transparent);
+  backdrop-filter:saturate(140%) blur(12px);
+  border-bottom:1px solid transparent;transition:border-color .2s;
+}
+header.scrolled{border-bottom-color:var(--line)}
+.bar{display:flex;align-items:center;gap:16px;height:68px}
+.mark{display:flex;align-items:baseline;gap:7px;text-decoration:none;font-weight:700;font-size:21px;letter-spacing:-.02em}
+.mark .by{font-weight:400;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.bar nav{margin-left:auto;display:flex;align-items:center;gap:22px}
+.bar nav a.navlink{color:var(--muted);text-decoration:none;font-size:14.5px}
+.bar nav a.navlink:hover{color:var(--ink)}
+@media (max-width:760px){ .bar nav a.navlink{display:none} .mark .by{display:none} }
+
+.langtog{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper)}
+.langtog button{
+  border:0;background:transparent;color:var(--muted);cursor:pointer;
+  font:500 12.5px/1 "DM Sans",sans-serif;padding:7px 11px;letter-spacing:.03em;
+}
+.langtog button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:9px;text-decoration:none;cursor:pointer;border:1px solid transparent;
+  font:500 15px/1 "DM Sans",sans-serif;padding:12px 18px;white-space:nowrap;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--ink);color:var(--ground)}
+.btn-primary:hover{box-shadow:var(--shadow)}
+.btn-ghost{background:var(--paper);color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--gold-soft)}
+.btn-sm{padding:9px 14px;font-size:14px}
+.btn svg{width:17px;height:17px;flex:none}
+
+/* --- hero --- */
+.hero{padding:76px 0 24px;max-width:780px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;
+  font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);background:var(--gold-wash);border:1px solid var(--gold-soft);
+  padding:7px 12px;border-radius:999px;
+}
+.hero h1{font-size:clamp(34px,5.4vw,54px)}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{margin-top:20px;font-size:clamp(17px,2.1vw,20px);color:var(--muted);max-width:60ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.fineprint{margin-top:16px;font-size:13.5px;color:var(--muted)}
+
+/* --- the screenshot strip --- */
+.shot{
+  margin:52px 0 0;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--paper);box-shadow:var(--shadow);overflow:hidden;
+}
+.shot img{display:block;width:100%;height:auto}
+.shot .caption{
+  padding:13px 18px;border-top:1px solid var(--line);
+  font-size:13px;color:var(--muted);
+}
+.shot.placeholder{
+  display:grid;place-items:center;min-height:300px;text-align:center;padding:40px 24px;
+  color:var(--muted);font-size:14px;border-style:dashed;
+}
+
+/* --- sections --- */
+section{padding:84px 0}
+section + section{padding-top:0}
+.sechead{max-width:640px;margin-bottom:40px}
+.sechead h2{font-size:clamp(26px,3.6vw,34px)}
+.sechead p{margin-top:14px;color:var(--muted);font-size:17px}
+.kicker{
+  font:500 11.5px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px;
+}
+
+.grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:620px){ .grid{grid-template-columns:1fr} }
+
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px 28px;
+}
+.card .ico{
+  width:38px;height:38px;border-radius:10px;background:var(--gold-wash);
+  display:grid;place-items:center;margin-bottom:18px;border:1px solid var(--gold-soft);
+}
+.card .ico svg{width:19px;height:19px;stroke:var(--gold);fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:17.5px;margin-bottom:9px}
+.card p{color:var(--muted);font-size:15px;line-height:1.62}
+
+/* --- steps --- */
+.steps{display:grid;gap:28px;grid-template-columns:repeat(3,1fr);counter-reset:s}
+@media (max-width:760px){ .steps{grid-template-columns:1fr;gap:22px} }
+.step{padding-top:22px;border-top:2px solid var(--line);counter-increment:s}
+.step::before{
+  content:counter(s,decimal-leading-zero);display:block;margin-bottom:12px;
+  font:500 12px/1 "DM Mono",ui-monospace,monospace;color:var(--gold);letter-spacing:.1em;
+}
+.step h3{font-size:17px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:15px}
+
+/* --- pricing --- */
+.plans{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px}
+@media (max-width:700px){ .plans{grid-template-columns:1fr} }
+.plan{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px 26px;display:flex;flex-direction:column;
+}
+.plan.featured{border-color:var(--gold-soft);box-shadow:var(--shadow)}
+.plan .pname{font-weight:700;font-size:17px}
+.plan .pwho{color:var(--muted);font-size:14px;margin-top:4px;min-height:40px}
+.plan .price{margin:18px 0 2px;font-size:38px;font-weight:700;letter-spacing:-.03em}
+.plan .price span{font-size:15px;font-weight:400;color:var(--muted);letter-spacing:0}
+.plan .iva{font-size:13.5px;color:var(--muted)}
+.plan ul{list-style:none;margin:20px 0 24px;padding:0;display:grid;gap:10px}
+.plan li{position:relative;padding-left:24px;font-size:15px;color:var(--muted)}
+.plan li::before{
+  content:"";position:absolute;left:0;top:7px;width:13px;height:7px;
+  border-left:1.8px solid var(--good);border-bottom:1.8px solid var(--good);
+  transform:rotate(-45deg);
+}
+.plan .btn{margin-top:auto}
+.pricenote{margin-top:22px;font-size:14.5px;color:var(--muted);max-width:60ch}
+
+/* --- referral --- */
+.refer{
+  background:var(--gold-wash);border:1px solid var(--gold-soft);
+  border-radius:var(--radius);padding:34px 32px;display:flex;gap:28px;align-items:center;
+}
+@media (max-width:720px){ .refer{flex-direction:column;align-items:flex-start;gap:18px} }
+.refer h3{font-size:20px;margin-bottom:8px}
+.refer p{color:var(--muted);font-size:15.5px;max-width:52ch}
+
+/* --- faq --- */
+.faq{max-width:760px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:20px 0;font-weight:500;font-size:16.5px;
+  display:flex;align-items:center;gap:14px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";margin-left:auto;width:9px;height:9px;flex:none;
+  border-right:1.7px solid var(--muted);border-bottom:1.7px solid var(--muted);
+  transform:rotate(45deg) translateY(-3px);transition:transform .18s ease;
+}
+.faq details[open] summary::after{transform:rotate(225deg) translateY(-2px)}
+.faq .ans{padding:0 0 22px;color:var(--muted);font-size:15.5px;max-width:64ch}
+
+/* --- closing band --- */
+.band{
+  background:var(--ink);color:var(--ground);border-radius:var(--radius);
+  padding:54px 44px;text-align:center;
+}
+.band h2{font-size:clamp(25px,3.4vw,32px)}
+.band p{margin-top:14px;color:color-mix(in srgb, var(--ground) 68%, transparent);font-size:17px}
+.band .cta{justify-content:center}
+.band .btn-primary{background:var(--gold-soft);color:#22190A}
+.band .btn-ghost{background:transparent;color:var(--ground);border-color:color-mix(in srgb, var(--ground) 32%, transparent)}
+.band .fineprint{color:color-mix(in srgb, var(--ground) 58%, transparent)}
+
+/* --- footer --- */
+footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
+.foot{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;font-size:14px;color:var(--muted)}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--ink)}
+.foot .spacer{margin-left:auto}
+
+/* The floating WhatsApp button, which is how business here actually
+   starts — but quiet enough not to sit on top of the writing. */
+.wafloat{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  background:var(--ink);color:var(--ground);box-shadow:var(--shadow);
+  text-decoration:none;transition:transform .14s ease;
+}
+.wafloat:hover{transform:scale(1.06)}
+.wafloat svg{width:25px;height:25px;fill:currentColor}
+@media (max-width:620px){ .wafloat{right:14px;bottom:14px} }
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important;animation:none !important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+
+<body>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="mark" href="#top">
+      <span>Naah</span>
+      <span class="by" data-t="by">por Naah Collective</span>
+    </a>
+    <nav>
+      <a class="navlink" href="#que-hace" data-t="nav1">Qué hace</a>
+      <a class="navlink" href="#precios" data-t="nav2">Precios</a>
+      <a class="navlink" href="#preguntas" data-t="nav3">Preguntas</a>
+      <div class="langtog" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-ghost btn-sm js-app" href="#" data-t="signin">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <div class="hero">
+      <span class="eyebrow" data-t="eyebrow">Mérida · Yucatán</span>
+      <h1 data-t="h1">El CRM para quien vende casas <em>aquí</em>.</h1>
+      <p class="lede" data-t="lede">Tu cartera, tus prospectos, tus recorridos y el expediente que pide el notario — en un solo lugar, en tu idioma, hecho para cómo se cierra una operación en Yucatán.</p>
+      <div class="cta">
+        <a class="btn btn-primary js-app" href="#" data-t="cta1">Empieza gratis</a>
+        <a class="btn btn-ghost js-wa" href="#" data-t="cta2">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.4z"/><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+          Habla conmigo por WhatsApp</a>
+      </div>
+      <p class="fineprint" data-t="fine1">14 días gratis. Sin tarjeta. Cancelas cuando quieras.</p>
+    </div>
+
+    <div class="shot placeholder" id="shot">
+      <div>
+        <strong data-t="shotph">Aquí va una captura de la pantalla de Hoy</strong><br>
+        <span data-t="shotph2">Guarda la imagen como <code>hoy.png</code> junto a este archivo y aparece sola.</span>
+      </div>
+    </div>
+  </div>
+
+
+  <section id="que-hace">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="kicker" data-t="k1">Qué hace</span>
+        <h2 data-t="h2a">Seis cosas que hoy viven en WhatsApp y en una hoja de cálculo.</h2>
+        <p data-t="p2a">Ninguna es un módulo que nadie abre. Son las seis que te quitan la tarde.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V8z"/><path d="M14 3v5h5"/><path d="M9 13l2 2 4-4"/></svg></div>
+          <h3 data-t="f1h">El expediente que pide el notario</h3>
+          <p data-t="f1p">Escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio. La lista real, por persona y por inmueble, marcada una sola vez — y sirve igual si compra o si vende.</p>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 16V4"/><path d="M8 8l4-4 4 4"/><path d="M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg></div>
+          <h3 data-t="f2h">Sueltas el PDF y la ficha se llena</h3>
+          <p data-t="f2p">Ficha técnica, avalúo o lista de precios del desarrollador: lo lee y llena precio, m², recámaras, entrega y comisión. Tú revisas antes de guardar — nada se guarda solo.</p>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><circle cx="16" cy="16" r="4"/><path d="M11 11l2 2"/></svg></div>
+          <h3 data-t="f3h">El inmueble que sí le sirve</h3>
+          <p data-t="f3p">Capturas el brief del comprador — presupuesto, zonas, recámaras, si es inversión o para vivir — y tu inventario se ordena solo, del que más encaja al que menos.</p>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <h3 data-t="f4h">Recorridos que se ven profesionales</h3>
+          <p data-t="f4p">Armas la ruta, pones hora y notas en cada parada, y sale un PDF con tu logotipo listo para mandarle al cliente por WhatsApp antes de salir.</p>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="11" rx="1.5"/><rect x="17" y="4" width="4" height="7" rx="1.5"/></svg></div>
+          <h3 data-t="f5h">Tu pipeline y tu comisión, de un vistazo</h3>
+          <p data-t="f5p">Cuánto tienes abierto, qué se cierra este mes, qué papeleo está frenando una operación y a quién llevas dos semanas sin contactar. Una pantalla, antes del primer café.</p>
+        </div>
+
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 010 18a15 15 0 010-18z"/></svg></div>
+          <h3 data-t="f6h">Bilingüe de verdad</h3>
+          <p data-t="f6p">Tú en inglés, tus asesores en español, los mismos registros. El expediente de un comprador extranjero y el de un vendedor local viven en el mismo sistema, sin traducir nada dos veces.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="wrap">
+      <div class="sechead">
+        <span class="kicker" data-t="k2">Cómo se empieza</span>
+        <h2 data-t="h2b">Una tarde, no un proyecto.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3 data-t="s1h">Creas tu cuenta</h3>
+          <p data-t="s1p">Con tu correo. Catorce días completos, sin tarjeta y sin llamada de ventas.</p>
+        </div>
+        <div class="step">
+          <h3 data-t="s2h">Subes tu inventario</h3>
+          <p data-t="s2p">Suelta los PDFs que ya tienes: cada uno se convierte en una ficha con precio, medidas y comisión.</p>
+        </div>
+        <div class="step">
+          <h3 data-t="s3h">Trabajas desde Hoy</h3>
+          <p data-t="s3p">La pantalla de inicio te dice qué sigue: a quién buscar, qué papel falta, qué se cierra este mes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="precios">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="kicker" data-t="k3">Precios</span>
+        <h2 data-t="h2c">Dos planes. En pesos, con IVA a la vista.</h2>
+        <p data-t="p2c">Sin costo de instalación, sin contrato anual obligatorio y sin cobrar por cada contacto que agregas.</p>
+      </div>
+
+      <div class="plans">
+        <div class="plan">
+          <div class="pname" data-t="pl1n">Individual</div>
+          <div class="pwho" data-t="pl1w">Un asesor por su cuenta. Contactos, inventario, recorridos y cierres.</div>
+          <div class="price">$99 <span data-t="permo">/ mes</span></div>
+          <div class="iva" data-t="pl1iva">$114.84 con IVA</div>
+          <ul>
+            <li data-t="pl1a">1 usuario</li>
+            <li data-t="pl1b">Inventario y contactos sin límite</li>
+            <li data-t="pl1c">50 lecturas de documentos al mes</li>
+            <li data-t="pl1d">2 GB para fotos y PDFs</li>
+          </ul>
+          <a class="btn btn-ghost js-app" href="#" data-t="pl1cta">Probar 14 días</a>
+        </div>
+
+        <div class="plan featured">
+          <div class="pname" data-t="pl2n">Agencia</div>
+          <div class="pwho" data-t="pl2w">Dueño, gerente y hasta cinco asesores compartiendo un inventario.</div>
+          <div class="price">$299 <span data-t="permo2">/ mes</span></div>
+          <div class="iva" data-t="pl2iva">$346.84 con IVA</div>
+          <ul>
+            <li data-t="pl2a">7 usuarios</li>
+            <li data-t="pl2b">Cada asesor ve solo sus compradores</li>
+            <li data-t="pl2c">250 lecturas de documentos al mes</li>
+            <li data-t="pl2d">20 GB para fotos y PDFs</li>
+          </ul>
+          <a class="btn btn-primary js-app" href="#" data-t="pl2cta">Probar 14 días</a>
+        </div>
+      </div>
+
+      <p class="pricenote" data-t="pnote">Al año son doce meses al precio de diez. La tarjeta, las facturas y la cancelación se manejan en Stripe — aquí nunca se guardan datos de tarjetas.</p>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="wrap">
+      <div class="refer">
+        <div>
+          <h3 data-t="refh">Recomienda a un colega y los dos ganan un mes.</h3>
+          <p data-t="refp">Su primer mes es gratis. El tuyo se acredita cuando su primer pago se liquida — así que solo vale algo si de verdad se queda. Tu código está dentro de la app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="preguntas">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="kicker" data-t="k4">Preguntas</span>
+        <h2 data-t="h2d">Lo que preguntan antes de entrar.</h2>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary data-t="q1">¿Mis datos son míos?</summary>
+          <div class="ans" data-t="a1">Sí, y puedes comprobarlo. Un botón exporta todo — cada contacto, inmueble, operación, recorrido y pendiente, con el estado del papeleo y los enlaces a tus archivos — en un solo archivo. Sin pedirlo por correo y sin esperar.</div>
+        </details>
+        <details>
+          <summary data-t="q2">¿Necesito tarjeta para probarlo?</summary>
+          <div class="ans" data-t="a2">No. Los catorce días no piden tarjeta. Si al final no te sirve, no haces nada y se acaba.</div>
+        </details>
+        <details>
+          <summary data-t="q3">¿Qué pasa si dejo de pagar?</summary>
+          <div class="ans" data-t="a3">Tus datos se quedan donde están y los puedes leer, buscar y exportar. Lo que se pausa es agregar y editar, y se reanuda en cuanto vuelvas.</div>
+        </details>
+        <details>
+          <summary data-t="q4">¿Funciona en el celular?</summary>
+          <div class="ans" data-t="a4">Sí. Es una página web, así que se abre en el navegador del celular, de la tablet o de la computadora, sin instalar nada ni pasar por una tienda de apps.</div>
+        </details>
+        <details>
+          <summary data-t="q5">¿Sirve fuera de Yucatán?</summary>
+          <div class="ans" data-t="a5">Sí. Las zonas y las etapas las nombras tú, y el expediente sigue los documentos que pide una notaría mexicana, no solo los de Mérida. Aquí es donde se probó, todos los días, en operaciones reales.</div>
+        </details>
+        <details>
+          <summary data-t="q6">¿Qué relación tiene con Naah Collective?</summary>
+          <div class="ans" data-t="a6">Naah Collective es una inmobiliaria en Mérida, y este sistema se construyó para trabajar ahí. Funcionó, así que ahora se vende aparte. Son marcas hermanas: tus datos no se comparten con la inmobiliaria ni con nadie más.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="wrap">
+      <div class="band">
+        <h2 data-t="bandh">Pruébalo con tu propia cartera.</h2>
+        <p data-t="bandp">Catorce días. Sube tres inmuebles y un comprador, y vas a ver si te sirve.</p>
+        <div class="cta">
+          <a class="btn btn-primary js-app" href="#" data-t="bandcta1">Empieza gratis</a>
+          <a class="btn btn-ghost js-wa" href="#" data-t="bandcta2">Prefiero que me lo enseñes</a>
+        </div>
+        <p class="fineprint" data-t="bandfine">Sin tarjeta, sin llamada de ventas, sin instalación.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="year">2026</span> Naah</span>
+    <span data-t="footloc">Mérida, Yucatán, México</span>
+    <a href="https://naahcollective.com" target="_blank" rel="noopener" data-t="footsib">Una marca hermana de Naah Collective</a>
+    <span class="spacer"></span>
+    <a class="js-wa" href="#">WhatsApp</a>
+    <a class="js-app" href="#" data-t="footsignin">Entrar</a>
+  </div>
+</footer>
+
+<a class="wafloat js-wa" href="#" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.4z"/><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
+</a>
+
+<script>
+(() => {
+"use strict";
+
+/* ============================================================
+   The two things that change when the world does. Both are one
+   line, on purpose.
+   ============================================================ */
+const APP_URL = "https://joshnorthcott.github.io/naah-crm/";
+const WHATSAPP = "5219993355302";          // +52 1 999 335 5302
+
+
+/* ============================================================
+   Spanish and English
+   ------------------------------------------------------------
+   The page is written in Spanish in the markup, so it reads
+   correctly with JavaScript off and for anything crawling it.
+   English is the swap.
+   ============================================================ */
+const EN = {
+  by: "by Naah Collective",
+  nav1: "What it does", nav2: "Pricing", nav3: "Questions", signin: "Sign in",
+
+  eyebrow: "Mérida · Yucatán",
+  h1: "The CRM for people who sell houses <em>here</em>.",
+  lede: "Your inventory, your buyers, your viewings and the file a Mexican notary actually asks for — in one place, in your language, built around how a deal really closes in Yucatán.",
+  cta1: "Start free", cta2: "Talk to me on WhatsApp",
+  fine1: "14 days free. No card. Cancel whenever.",
+  shotph: "A screenshot of the Today screen goes here",
+  shotph2: "Save the image as <code>hoy.png</code> next to this file and it appears on its own.",
+
+  k1: "What it does",
+  h2a: "Six things that currently live in WhatsApp and a spreadsheet.",
+  p2a: "None of them is a module nobody opens. They're the six that eat your afternoon.",
+
+  f1h: "The file the notary asks for",
+  f1p: "Escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio. The real list, per person and per property, ticked once — and it serves whether they're buying or selling.",
+  f2h: "Drop the PDF, the listing fills itself",
+  f2p: "Factsheet, avalúo or a developer's price list: it reads the document and fills in price, m², bedrooms, handover and commission. You check it before saving — nothing saves itself.",
+  f3h: "The property that actually suits them",
+  f3p: "Enter the buyer's brief — budget, zones, bedrooms, investment or to live in — and your inventory sorts itself, best fit first.",
+  f4h: "Viewings that look professional",
+  f4p: "Build the route, put a time and a note on each stop, and out comes a PDF with your logo, ready to send the client on WhatsApp before you set off.",
+  f5h: "Your pipeline and your commission, at a glance",
+  f5p: "What's open, what closes this month, which paperwork is holding a deal up, and who you haven't spoken to in a fortnight. One screen, before the first coffee.",
+  f6h: "Properly bilingual",
+  f6p: "You in English, your agents in Spanish, the same records. A foreign buyer's file and a local vendor's file live in the same system, with nothing translated twice.",
+
+  k2: "Getting started", h2b: "An afternoon, not a project.",
+  s1h: "Create your account",
+  s1p: "With your email. A full fourteen days, no card and no sales call.",
+  s2h: "Load your inventory",
+  s2p: "Drop in the PDFs you already have: each one becomes a listing with price, measurements and commission.",
+  s3h: "Work from Today",
+  s3p: "The home screen tells you what's next: who to chase, which document is missing, what closes this month.",
+
+  k3: "Pricing", h2c: "Two plans. In pesos, with IVA in plain sight.",
+  p2c: "No setup fee, no compulsory annual contract, and no charging you per contact you add.",
+  pl1n: "Solo", pl1w: "One agent working alone. Contacts, inventory, viewings and closings.",
+  permo: "/ mo", pl1iva: "$114.84 with IVA",
+  pl1a: "1 user", pl1b: "Unlimited inventory and contacts",
+  pl1c: "50 document reads a month", pl1d: "2 GB for photos and PDFs",
+  pl1cta: "Try 14 days",
+  pl2n: "Agency", pl2w: "Owner, manager and up to five agents sharing one inventory.",
+  permo2: "/ mo", pl2iva: "$346.84 with IVA",
+  pl2a: "7 users", pl2b: "Each agent sees only their own buyers",
+  pl2c: "250 document reads a month", pl2d: "20 GB for photos and PDFs",
+  pl2cta: "Try 14 days",
+  pnote: "Annually it's twelve months for the price of ten. The card, the invoices and cancellation are handled on Stripe — no card details are ever stored here.",
+
+  refh: "Refer a colleague and you both get a month.",
+  refp: "Their first month is free. Yours is credited once their first payment clears — so it's worth something only if they actually stay. Your code is inside the app.",
+
+  k4: "Questions", h2d: "What people ask before signing up.",
+  q1: "Is my data mine?",
+  a1: "Yes, and you can prove it. One button exports everything — every contact, property, deal, viewing and task, with paperwork state and the links to your files — in a single file. No emailing support, no waiting.",
+  q2: "Do I need a card to try it?",
+  a2: "No. The fourteen days ask for no card. If it isn't for you at the end, do nothing and it stops.",
+  q3: "What happens if I stop paying?",
+  a3: "Your data stays exactly where it is and you can still read, search and export it. What pauses is adding and editing, and that resumes the moment you come back.",
+  q4: "Does it work on a phone?",
+  a4: "Yes. It's a web page, so it opens in the browser on a phone, a tablet or a computer, with nothing to install and no app store.",
+  q5: "Is it any use outside Yucatán?",
+  a5: "Yes. You name the zones and the stages yourself, and the file follows what a Mexican notary asks for, not only what Mérida asks for. Here is simply where it was tested, daily, on real deals.",
+  q6: "How is this related to Naah Collective?",
+  a6: "Naah Collective is an estate agency in Mérida, and this was built to run it. It worked, so now it's sold on its own. They're sister brands: your data isn't shared with the agency, or with anyone else.",
+
+  bandh: "Try it on your own inventory.",
+  bandp: "Fourteen days. Load three properties and one buyer, and you'll know.",
+  bandcta1: "Start free", bandcta2: "I'd rather you showed me",
+  bandfine: "No card, no sales call, no installation.",
+
+  footloc: "Mérida, Yucatán, Mexico",
+  footsib: "A sister brand of Naah Collective",
+  footsignin: "Sign in"
+};
+
+/* The Spanish is whatever the markup already says, captured once
+   before anything is swapped — so the two languages can never
+   drift apart in the way a second dictionary would allow. */
+const ES = {};
+document.querySelectorAll("[data-t]").forEach(el => { ES[el.dataset.t] = el.innerHTML; });
+
+function paint(lang) {
+  const dict = lang === "en" ? EN : ES;
+  document.querySelectorAll("[data-t]").forEach(el => {
+    const v = dict[el.dataset.t];
+    if (v != null) el.innerHTML = v;
+  });
+  document.documentElement.lang = lang;
+  document.title = lang === "en"
+    ? "Naah — real-estate CRM for Yucatán"
+    : "Naah — CRM inmobiliario para Yucatán";
+  document.querySelectorAll("[data-lang]").forEach(b => {
+    b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+  });
+  try { localStorage.setItem("naah.site.lang", lang); } catch (e) { /* storage off */ }
+}
+
+/* ?lang= wins, then whatever they chose last time, then the
+   browser — and Spanish when none of those say otherwise. */
+function startingLang() {
+  const q = new URLSearchParams(location.search).get("lang");
+  if (q === "en" || q === "es") return q;
+  try {
+    const saved = localStorage.getItem("naah.site.lang");
+    if (saved === "en" || saved === "es") return saved;
+  } catch (e) { /* storage off */ }
+  return /^es\b/i.test(navigator.language || "") ? "es" : "en";
+}
+
+document.querySelectorAll("[data-lang]").forEach(b => {
+  b.addEventListener("click", () => paint(b.dataset.lang));
+});
+paint(startingLang());
+
+
+/* ============================================================
+   The links
+   ------------------------------------------------------------
+   A referral code arrives on this page and has to survive the
+   journey into the app, which is where it is redeemed. Losing it
+   here would quietly cost somebody their free month.
+   ============================================================ */
+const ref = (new URLSearchParams(location.search).get("ref") || "")
+  .trim().toUpperCase().slice(0, 12);
+
+const appLink = (() => {
+  if (!/^[A-Z0-9]+$/.test(ref)) return APP_URL;
+  return APP_URL + (APP_URL.includes("?") ? "&" : "?") + "ref=" + encodeURIComponent(ref);
+})();
+
+document.querySelectorAll(".js-app").forEach(a => { a.href = appLink; });
+
+const waText = () => document.documentElement.lang === "en"
+  ? "Hi Josh — I saw the Naah site and I'd like to see the CRM."
+  : "Hola Josh — vi la página de Naah y me gustaría ver el CRM.";
+
+document.querySelectorAll(".js-wa").forEach(a => {
+  a.target = "_blank";
+  a.rel = "noopener";
+  a.addEventListener("click", e => {
+    /* Built at click time so the message follows whichever
+       language they are actually reading. */
+    e.preventDefault();
+    window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(waText()),
+                "_blank", "noopener");
+  });
+  a.href = "https://wa.me/" + WHATSAPP;
+});
+
+
+/* ============================================================
+   Small touches
+   ============================================================ */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const header = document.querySelector("header");
+const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
+addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+/* The screenshot is optional: drop hoy.png beside this file and it
+   replaces the dashed placeholder. No image, no broken picture.
+
+   It also changes with the toggle, which is the shortest possible
+   proof of the bilingual claim two sections further down. */
+(() => {
+  const host = document.getElementById("shot");
+  const CAP = {
+    es: "La pantalla de Hoy: a quién buscar, qué papel falta y qué se cierra este mes.",
+    en: "The Today screen: who to chase, which document is missing, what closes this month."
+  };
+  const shown = {};
+
+  const show = () => {
+    const lang = document.documentElement.lang === "en" ? "en" : "es";
+    const file = lang === "en" ? "hoy-en.png" : "hoy.png";
+    if (shown[lang] === false) return;                 // that one is missing
+
+    const img = new Image();
+    img.onload = () => {
+      shown[lang] = true;
+      host.classList.remove("placeholder");
+      img.alt = CAP[lang];
+      const cap = document.createElement("div");
+      cap.className = "caption";
+      cap.textContent = CAP[lang];
+      host.replaceChildren(img, cap);
+    };
+    img.onerror = () => {
+      shown[lang] = false;
+      /* Fall back to the Spanish one rather than to a dashed box. */
+      if (lang === "en" && shown.es !== false) {
+        const es = new Image();
+        es.onload = () => {
+          host.classList.remove("placeholder");
+          es.alt = CAP.en;
+          const cap = document.createElement("div");
+          cap.className = "caption";
+          cap.textContent = CAP.en;
+          host.replaceChildren(es, cap);
+        };
+        es.src = "hoy.png";
+      }
+    };
+    img.src = file;
+  };
+
+  show();
+  document.querySelectorAll("[data-lang]").forEach(b => b.addEventListener("click", show));
+})();
+
+})();
+</script>
+</body>
+</html>
