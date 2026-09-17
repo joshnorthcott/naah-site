@@ -3,219 +3,243 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Naah — CRM inmobiliario para Yucatán</title>
-<meta name="description" content="El CRM para inmobiliarias de Mérida: cartera, prospectos, recorridos y el expediente que pide el notario. En español y en inglés. 14 días gratis, sin tarjeta.">
-<meta name="theme-color" content="#FAF7F0">
+<title>naah — CRM inmobiliario</title>
+<meta name="description" content="Hecho por asesores, para asesores. Cartera, prospectos, recorridos y el expediente que pide el notario, en un solo lugar. En español y en inglés. 14 días gratis, sin tarjeta.">
+<meta name="theme-color" content="#F7F8FA">
 <link rel="canonical" href="https://naah.com.mx/">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Naah">
-<meta property="og:title" content="Naah — CRM inmobiliario para Yucatán">
-<meta property="og:description" content="Tu cartera, tus prospectos y tu papeleo en un solo lugar. Hecho para cómo se cierra una operación en Mérida.">
+<meta property="og:site_name" content="naah">
+<meta property="og:title" content="naah — CRM inmobiliario">
+<meta property="og:description" content="Hecho por asesores, para asesores. Tu cartera, tus prospectos y tu papeleo en un solo lugar.">
 <meta property="og:url" content="https://naah.com.mx/">
+<meta property="og:image" content="https://naah.com.mx/shots/hoy.webp">
 <meta property="og:locale" content="es_MX">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231D2E27'/><text x='16' y='22' font-family='DM Sans,sans-serif' font-size='17' font-weight='700' fill='%23E1C790' text-anchor='middle'>N</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232C5282'/><text x='16' y='23' font-family='Space Grotesk,sans-serif' font-size='20' font-weight='700' fill='%23ffffff' text-anchor='middle'>n</text></svg>">
 
 <style>
 /* ============================================================
-   Naah — the same ink, paper and gold as the app, so the two
-   read as one family without the site pretending to be the
-   product.
+   naah — Harbour. Cool greys, one blue, and colour kept back for
+   the six things the product actually does.
+
+   Light only, on purpose: this page is read once, in daylight,
+   usually on a phone between viewings.
    ============================================================ */
 :root{
   color-scheme: light;
-  --ground:#FAF7F0;
+  --ground:#F7F8FA;
   --paper:#FFFFFF;
-  --ink:#1D2E27;
-  --muted:#7C8A82;
-  --line:#E2D9C6;
-  --gold:#B8921F;
-  --gold-soft:#E1C790;
-  --gold-wash:#F7EFDD;
-  --good:#3E7A63;
-  --shadow:0 1px 2px rgba(29,46,39,.04), 0 8px 24px rgba(29,46,39,.05);
-  --radius:12px;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    color-scheme: dark;
-    --ground:#12100D;
-    --paper:#1A1815;
-    --ink:#F0EBE0;
-    --muted:#9A968C;
-    --line:#2E2A24;
-    --gold:#D7B45F;
-    --gold-soft:#8A6F2C;
-    --gold-wash:#241F16;
-    --good:#6FA98D;
-    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
-  }
-}
-:root[data-theme="dark"]{
-  color-scheme: dark;
-  --ground:#12100D; --paper:#1A1815; --ink:#F0EBE0; --muted:#9A968C;
-  --line:#2E2A24; --gold:#D7B45F; --gold-soft:#8A6F2C; --gold-wash:#241F16;
-  --good:#6FA98D; --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  --ink:#1B2430;
+  --ink-2:#44515F;
+  --muted:#77838F;
+  --line:#D8DEE7;
+  --line-soft:#EAEEF3;
+  --accent:#2C5282;
+  --accent-deep:#23436B;
+  --accent-on:#FFFFFF;
+  --wash:#E7EEF6;
+  --good:#2F7D5E;
+  --shadow:0 1px 2px rgba(27,36,48,.04), 0 10px 26px -18px rgba(27,36,48,.35);
+  --radius:9px;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0; background:var(--ground); color:var(--ink);
-  font:400 17px/1.6 "DM Sans", system-ui, -apple-system, sans-serif;
+  font:400 17px/1.62 "Space Grotesk", system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
-h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.018em;font-weight:700}
+h1,h2,h3{margin:0;line-height:1.13;letter-spacing:-.035em;font-weight:700}
 p{margin:0}
 a{color:inherit}
+code{font-family:"Space Mono",ui-monospace,monospace;font-size:.9em}
 
 /* --- top bar --- */
 header{
   position:sticky;top:0;z-index:50;
-  background:color-mix(in srgb, var(--ground) 86%, transparent);
+  background:color-mix(in srgb, var(--ground) 88%, transparent);
   backdrop-filter:saturate(140%) blur(12px);
   border-bottom:1px solid transparent;transition:border-color .2s;
 }
 header.scrolled{border-bottom-color:var(--line)}
-.bar{display:flex;align-items:center;gap:16px;height:68px}
-.mark{display:flex;align-items:baseline;gap:7px;text-decoration:none;font-weight:700;font-size:21px;letter-spacing:-.02em}
-.mark .by{font-weight:400;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.bar{display:flex;align-items:center;gap:16px;height:66px}
+.mark{text-decoration:none;font-weight:700;font-size:23px;letter-spacing:-.05em}
 .bar nav{margin-left:auto;display:flex;align-items:center;gap:22px}
 .bar nav a.navlink{color:var(--muted);text-decoration:none;font-size:14.5px}
 .bar nav a.navlink:hover{color:var(--ink)}
-@media (max-width:760px){ .bar nav a.navlink{display:none} .mark .by{display:none} }
+@media (max-width:780px){ .bar nav a.navlink{display:none} }
 
-.langtog{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--paper)}
+.langtog{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper)}
 .langtog button{
   border:0;background:transparent;color:var(--muted);cursor:pointer;
-  font:500 12.5px/1 "DM Sans",sans-serif;padding:7px 11px;letter-spacing:.03em;
+  font:400 12px/1 "Space Mono",monospace;padding:7px 10px;letter-spacing:.06em;
 }
-.langtog button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+.langtog button[aria-pressed="true"]{background:var(--accent);color:var(--accent-on)}
 
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  border-radius:9px;text-decoration:none;cursor:pointer;border:1px solid transparent;
-  font:500 15px/1 "DM Sans",sans-serif;padding:12px 18px;white-space:nowrap;
-  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+  border-radius:7px;text-decoration:none;cursor:pointer;border:1px solid transparent;
+  font:500 15px/1 "Space Grotesk",sans-serif;padding:13px 19px;white-space:nowrap;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
 }
 .btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--ink);color:var(--ground)}
-.btn-primary:hover{box-shadow:var(--shadow)}
+.btn-primary{background:var(--accent);color:var(--accent-on)}
+.btn-primary:hover{background:var(--accent-deep);box-shadow:var(--shadow)}
 .btn-ghost{background:var(--paper);color:var(--ink);border-color:var(--line)}
-.btn-ghost:hover{border-color:var(--gold-soft)}
+.btn-ghost:hover{border-color:var(--accent)}
 .btn-sm{padding:9px 14px;font-size:14px}
 .btn svg{width:17px;height:17px;flex:none}
 
 /* --- hero --- */
-.hero{padding:76px 0 24px;max-width:780px}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;
-  font:500 12px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--gold);background:var(--gold-wash);border:1px solid var(--gold-soft);
-  padding:7px 12px;border-radius:999px;
-}
-.hero h1{font-size:clamp(34px,5.4vw,54px)}
-.hero h1 em{font-style:normal;color:var(--gold)}
+.hero{padding:72px 0 0;max-width:820px}
+.hero h1{font-size:clamp(36px,5.8vw,60px)}
 .hero .lede{margin-top:20px;font-size:clamp(17px,2.1vw,20px);color:var(--muted);max-width:60ch}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.fineprint{margin-top:16px;font-size:13.5px;color:var(--muted)}
 
-/* --- the screenshot strip --- */
-.shot{
-  margin:52px 0 0;border:1px solid var(--line);border-radius:var(--radius);
-  background:var(--paper);box-shadow:var(--shadow);overflow:hidden;
+/* The trial is the whole offer, so it gets its own box rather than a
+   footnote in grey. */
+.trial{
+  margin-top:22px;display:inline-flex;align-items:center;gap:11px;flex-wrap:wrap;
+  background:var(--wash);border:1px solid var(--accent);
+  border-radius:8px;padding:12px 16px;
 }
-.shot img{display:block;width:100%;height:auto}
-.shot .caption{
+.trial b{font-size:16px}
+.trial span{color:var(--ink-2);font-size:14.5px}
+.trial .dot{color:var(--accent)}
+
+/* --- carousel --- */
+.reel{margin:54px 0 0}
+.reel .frame{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.reel .track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.reel .slide{min-width:100%}
+.reel .slide img{display:block;width:100%;height:auto}
+.reel .bar2{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
   padding:13px 18px;border-top:1px solid var(--line);
-  font-size:13px;color:var(--muted);
 }
-.shot.placeholder{
-  display:grid;place-items:center;min-height:300px;text-align:center;padding:40px 24px;
-  color:var(--muted);font-size:14px;border-style:dashed;
+.reel .label{font-size:13.5px;color:var(--muted)}
+.reel .label b{font-weight:500;color:var(--ink)}
+.reel .dots{display:flex;gap:7px;margin-left:auto}
+.reel .dots button{
+  width:26px;height:5px;border:0;border-radius:3px;background:var(--line);
+  padding:0;cursor:pointer;transition:background .2s;
 }
+.reel .dots button[aria-current="true"]{background:var(--accent)}
+.reel .dots button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* --- sections --- */
-section{padding:84px 0}
+section{padding:86px 0}
 section + section{padding-top:0}
 .sechead{max-width:640px;margin-bottom:40px}
-.sechead h2{font-size:clamp(26px,3.6vw,34px)}
+.sechead.mid{margin-left:auto;margin-right:auto;text-align:center}
+.sechead h2{font-size:clamp(26px,3.6vw,35px)}
 .sechead p{margin-top:14px;color:var(--muted);font-size:17px}
 .kicker{
-  font:500 11.5px/1 "DM Mono",ui-monospace,monospace;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px;
+  font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:15px;
 }
 
+/* --- the six things, as cards that turn over --- */
 .grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
-@media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
-@media (max-width:620px){ .grid{grid-template-columns:1fr} }
+@media (max-width:920px){ .grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:640px){ .grid{grid-template-columns:1fr} }
 
-.card{
+.flip{
+  background:none;border:0;padding:0;font:inherit;color:inherit;text-align:left;
+  perspective:1400px;cursor:pointer;display:block;width:100%;
+}
+/* A span is inline until told otherwise, and width and min-height
+   mean nothing on an inline box — which left the card with no
+   height at all and nothing to click. */
+.flip .inner{
+  display:block;position:relative;width:100%;min-height:326px;
+  transition:transform .6s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d;
+}
+.flip[aria-pressed="true"] .inner{transform:rotateY(180deg)}
+.flip .face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
   background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
-  padding:26px 24px 28px;
+  border-top:3px solid var(--hue,var(--accent));overflow:hidden;
 }
-.card .ico{
-  width:38px;height:38px;border-radius:10px;background:var(--gold-wash);
-  display:grid;place-items:center;margin-bottom:18px;border:1px solid var(--gold-soft);
+.flip .front{padding:24px 22px 44px}
+.flip .back{transform:rotateY(180deg)}
+.flip .back img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block}
+.flip .ico{
+  width:36px;height:36px;border-radius:7px;display:grid;place-items:center;margin-bottom:16px;
+  background:color-mix(in srgb, var(--hue,var(--accent)) 10%, #fff);
+  border:1px solid color-mix(in srgb, var(--hue,var(--accent)) 35%, #fff);
 }
-.card .ico svg{width:19px;height:19px;stroke:var(--gold);fill:none;stroke-width:1.7;
+.flip .ico svg{width:18px;height:18px;stroke:var(--hue,var(--accent));fill:none;stroke-width:1.7;
   stroke-linecap:round;stroke-linejoin:round}
-.card h3{font-size:17.5px;margin-bottom:9px}
-.card p{color:var(--muted);font-size:15px;line-height:1.62}
+.flip h3{font-size:17.5px;margin-bottom:9px;display:block}
+.flip p{color:var(--muted);font-size:15px;line-height:1.6;display:block}
+.flip .turn{
+  position:absolute;left:22px;bottom:15px;font:400 11px/1 "Space Mono",monospace;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+}
+.flip .back .turn{
+  left:auto;right:11px;bottom:11px;background:rgba(255,255,255,.92);
+  border:1px solid var(--line);border-radius:5px;padding:6px 9px;color:var(--ink-2);
+}
+.flip:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:var(--radius)}
+@media (prefers-reduced-motion: reduce){ .flip .inner{transition:none} }
 
 /* --- steps --- */
 .steps{display:grid;gap:28px;grid-template-columns:repeat(3,1fr);counter-reset:s}
-@media (max-width:760px){ .steps{grid-template-columns:1fr;gap:22px} }
-.step{padding-top:22px;border-top:2px solid var(--line);counter-increment:s}
+@media (max-width:780px){ .steps{grid-template-columns:1fr;gap:22px} }
+.step{padding-top:20px;border-top:2px solid var(--accent);counter-increment:s}
 .step::before{
   content:counter(s,decimal-leading-zero);display:block;margin-bottom:12px;
-  font:500 12px/1 "DM Mono",ui-monospace,monospace;color:var(--gold);letter-spacing:.1em;
+  font:400 11.5px/1 "Space Mono",ui-monospace,monospace;color:var(--muted);letter-spacing:.12em;
 }
 .step h3{font-size:17px;margin-bottom:8px}
 .step p{color:var(--muted);font-size:15px}
 
-/* --- pricing --- */
-.plans{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px}
+/* --- pricing, centred --- */
+.plans{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px;margin:0 auto}
 @media (max-width:700px){ .plans{grid-template-columns:1fr} }
 .plan{
   background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
-  padding:28px 26px;display:flex;flex-direction:column;
+  padding:28px 26px;display:flex;flex-direction:column;text-align:center;
 }
-.plan.featured{border-color:var(--gold-soft);box-shadow:var(--shadow)}
+.plan.featured{border-color:var(--accent);box-shadow:var(--shadow)}
 .plan .pname{font-weight:700;font-size:17px}
-.plan .pwho{color:var(--muted);font-size:14px;margin-top:4px;min-height:40px}
-.plan .price{margin:18px 0 2px;font-size:38px;font-weight:700;letter-spacing:-.03em}
+.plan .pwho{color:var(--muted);font-size:14px;margin-top:4px;min-height:44px}
+.plan .price{margin:18px 0 2px;font-size:38px;font-weight:700;letter-spacing:-.045em}
 .plan .price span{font-size:15px;font-weight:400;color:var(--muted);letter-spacing:0}
-.plan .iva{font-size:13.5px;color:var(--muted)}
-.plan ul{list-style:none;margin:20px 0 24px;padding:0;display:grid;gap:10px}
+.plan .iva{font-size:13.5px;color:var(--muted);font-family:"Space Mono",monospace}
+.plan ul{list-style:none;margin:20px 0 24px;padding:0;display:grid;gap:10px;text-align:left}
 .plan li{position:relative;padding-left:24px;font-size:15px;color:var(--muted)}
 .plan li::before{
-  content:"";position:absolute;left:0;top:7px;width:13px;height:7px;
+  content:"";position:absolute;left:0;top:7px;width:12px;height:6px;
   border-left:1.8px solid var(--good);border-bottom:1.8px solid var(--good);
   transform:rotate(-45deg);
 }
 .plan .btn{margin-top:auto}
-.pricenote{margin-top:22px;font-size:14.5px;color:var(--muted);max-width:60ch}
+.pricenote{margin:24px auto 0;font-size:14.5px;color:var(--muted);max-width:62ch;text-align:center}
 
 /* --- referral --- */
 .refer{
-  background:var(--gold-wash);border:1px solid var(--gold-soft);
-  border-radius:var(--radius);padding:34px 32px;display:flex;gap:28px;align-items:center;
+  background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:var(--radius);padding:32px 30px;
 }
-@media (max-width:720px){ .refer{flex-direction:column;align-items:flex-start;gap:18px} }
 .refer h3{font-size:20px;margin-bottom:8px}
 .refer p{color:var(--muted);font-size:15.5px;max-width:52ch}
 
 /* --- faq --- */
-.faq{max-width:760px;border-top:1px solid var(--line)}
+.faq{max-width:760px;border-top:1px solid var(--line);margin:0 auto}
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{
   cursor:pointer;list-style:none;padding:20px 0;font-weight:500;font-size:16.5px;
@@ -232,34 +256,39 @@ section + section{padding-top:0}
 
 /* --- closing band --- */
 .band{
-  background:var(--ink);color:var(--ground);border-radius:var(--radius);
+  background:var(--ink);color:#F7F8FA;border-radius:var(--radius);
   padding:54px 44px;text-align:center;
 }
-.band h2{font-size:clamp(25px,3.4vw,32px)}
-.band p{margin-top:14px;color:color-mix(in srgb, var(--ground) 68%, transparent);font-size:17px}
+.band h2{font-size:clamp(25px,3.4vw,33px)}
+.band p{margin-top:14px;color:rgba(247,248,250,.7);font-size:17px}
 .band .cta{justify-content:center}
-.band .btn-primary{background:var(--gold-soft);color:#22190A}
-.band .btn-ghost{background:transparent;color:var(--ground);border-color:color-mix(in srgb, var(--ground) 32%, transparent)}
-.band .fineprint{color:color-mix(in srgb, var(--ground) 58%, transparent)}
+.band .btn-primary{background:#F7F8FA;color:var(--ink)}
+.band .btn-primary:hover{background:#fff}
+.band .btn-ghost{background:transparent;color:#F7F8FA;border-color:rgba(247,248,250,.34)}
+.band .btn-ghost:hover{border-color:#F7F8FA}
+.band .trial{
+  background:rgba(247,248,250,.1);border-color:rgba(247,248,250,.35);
+  color:#F7F8FA;margin-top:24px;
+}
+.band .trial span{color:rgba(247,248,250,.72)}
+.band .trial .dot{color:rgba(247,248,250,.55)}
 
 /* --- footer --- */
-footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
-.foot{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:center;font-size:14px;color:var(--muted)}
+footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
+.foot{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;font-size:14px;color:var(--muted)}
 .foot a{text-decoration:none}
 .foot a:hover{color:var(--ink)}
 .foot .spacer{margin-left:auto}
 
-/* The floating WhatsApp button, which is how business here actually
-   starts — but quiet enough not to sit on top of the writing. */
 .wafloat{
   position:fixed;right:20px;bottom:20px;z-index:60;
-  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
-  background:var(--ink);color:var(--ground);box-shadow:var(--shadow);
+  width:50px;height:50px;border-radius:50%;display:grid;place-items:center;
+  background:var(--accent);color:#fff;box-shadow:var(--shadow);
   text-decoration:none;transition:transform .14s ease;
 }
 .wafloat:hover{transform:scale(1.06)}
-.wafloat svg{width:25px;height:25px;fill:currentColor}
-@media (max-width:620px){ .wafloat{right:14px;bottom:14px} }
+.wafloat svg{width:24px;height:24px;fill:currentColor}
+@media (max-width:640px){ .wafloat{right:14px;bottom:14px} }
 
 @media (prefers-reduced-motion: reduce){
   *{transition:none !important;animation:none !important}
@@ -272,10 +301,7 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
 
 <header id="top">
   <div class="wrap bar">
-    <a class="mark" href="#top">
-      <span>Naah</span>
-      <span class="by" data-t="by">por Naah Collective</span>
-    </a>
+    <a class="mark" href="#top">naah</a>
     <nav>
       <a class="navlink" href="#que-hace" data-t="nav1">Qué hace</a>
       <a class="navlink" href="#precios" data-t="nav2">Precios</a>
@@ -293,22 +319,38 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
 
   <div class="wrap">
     <div class="hero">
-      <span class="eyebrow" data-t="eyebrow">Mérida · Yucatán</span>
-      <h1 data-t="h1">El CRM para quien vende casas <em>aquí</em>.</h1>
-      <p class="lede" data-t="lede">Tu cartera, tus prospectos, tus recorridos y el expediente que pide el notario — en un solo lugar, en tu idioma, hecho para cómo se cierra una operación en Yucatán.</p>
+      <h1 data-t="h1">Hecho por asesores, para asesores.</h1>
+      <p class="lede" data-t="lede">El CRM para quien vende casas aquí: tu cartera, tus prospectos, tus recorridos y el expediente que pide el notario, en un solo lugar y en tu idioma.</p>
       <div class="cta">
         <a class="btn btn-primary js-app" href="#" data-t="cta1">Empieza gratis</a>
         <a class="btn btn-ghost js-wa" href="#" data-t="cta2">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.4z"/><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
           Habla conmigo por WhatsApp</a>
       </div>
-      <p class="fineprint" data-t="fine1">14 días gratis. Sin tarjeta. Cancelas cuando quieras.</p>
+      <p class="trial">
+        <b data-t="trial1">14 días gratis</b>
+        <span class="dot">·</span>
+        <span data-t="trial2">Sin tarjeta</span>
+        <span class="dot">·</span>
+        <span data-t="trial3">Sin llamada de ventas</span>
+        <span class="dot">·</span>
+        <span data-t="trial4">Cancelas cuando quieras</span>
+      </p>
     </div>
 
-    <div class="shot placeholder" id="shot">
-      <div>
-        <strong data-t="shotph">Aquí va una captura de la pantalla de Hoy</strong><br>
-        <span data-t="shotph2">Guarda la imagen como <code>hoy.png</code> junto a este archivo y aparece sola.</span>
+    <div class="reel" id="reel">
+      <div class="frame">
+        <div class="track" id="track">
+          <div class="slide"><img src="shots/hoy.webp" alt=""></div>
+          <div class="slide"><img src="shots/inmuebles.webp" alt=""></div>
+          <div class="slide"><img src="shots/coincidencias.webp" alt=""></div>
+          <div class="slide"><img src="shots/recorridos.webp" alt=""></div>
+          <div class="slide"><img src="shots/operaciones.webp" alt=""></div>
+        </div>
+        <div class="bar2">
+          <span class="label" id="reelLabel"></span>
+          <div class="dots" id="reelDots"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -319,45 +361,101 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
       <div class="sechead">
         <span class="kicker" data-t="k1">Qué hace</span>
         <h2 data-t="h2a">Seis cosas que hoy viven en WhatsApp y en una hoja de cálculo.</h2>
-        <p data-t="p2a">Ninguna es un módulo que nadie abre. Son las seis que te quitan la tarde.</p>
+        <p data-t="p2a">Ninguna es un módulo que nadie abre. Son las seis que te quitan la tarde. Toca cualquiera para verla por dentro.</p>
       </div>
 
       <div class="grid">
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V8z"/><path d="M14 3v5h5"/><path d="M9 13l2 2 4-4"/></svg></div>
-          <h3 data-t="f1h">El expediente que pide el notario</h3>
-          <p data-t="f1p">Escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio. La lista real, por persona y por inmueble, marcada una sola vez — y sirve igual si compra o si vende.</p>
-        </div>
 
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 16V4"/><path d="M8 8l4-4 4 4"/><path d="M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg></div>
-          <h3 data-t="f2h">Sueltas el PDF y la ficha se llena</h3>
-          <p data-t="f2p">Ficha técnica, avalúo o lista de precios del desarrollador: lo lee y llena precio, m², recámaras, entrega y comisión. Tú revisas antes de guardar — nada se guarda solo.</p>
-        </div>
+        <button class="flip" type="button" aria-pressed="false" style="--hue:#2C5282">
+          <span class="inner">
+            <span class="face front">
+              <span class="ico"><svg viewBox="0 0 24 24"><path d="M14 3H6v18h12V8z"/><path d="M14 3v5h5"/><path d="M9 13l2 2 4-4"/></svg></span>
+              <h3 data-t="f1h">El expediente que pide el notario</h3>
+              <p data-t="f1p">Escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio. La lista real, por persona y por inmueble, marcada una sola vez — y sirve igual si compra o si vende.</p>
+              <span class="turn" data-t="turn">Ver ↻</span>
+            </span>
+            <span class="face back">
+              <img src="shots/b1-expediente.webp" alt="" loading="lazy">
+              <span class="turn" data-t="turnback">Volver ↻</span>
+            </span>
+          </span>
+        </button>
 
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><circle cx="16" cy="16" r="4"/><path d="M11 11l2 2"/></svg></div>
-          <h3 data-t="f3h">El inmueble que sí le sirve</h3>
-          <p data-t="f3p">Capturas el brief del comprador — presupuesto, zonas, recámaras, si es inversión o para vivir — y tu inventario se ordena solo, del que más encaja al que menos.</p>
-        </div>
+        <button class="flip" type="button" aria-pressed="false" style="--hue:#2F7D5E">
+          <span class="inner">
+            <span class="face front">
+              <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 16V4"/><path d="M8 8l4-4 4 4"/><path d="M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"/></svg></span>
+              <h3 data-t="f2h">Sueltas el PDF y la IA llena la ficha</h3>
+              <p data-t="f2p">Ficha técnica, avalúo o lista de precios del desarrollador: la inteligencia artificial lee el documento y llena precio, m², recámaras, entrega y comisión. Tú revisas antes de guardar — nada se guarda solo.</p>
+              <span class="turn" data-t="turn">Ver ↻</span>
+            </span>
+            <span class="face back">
+              <img src="shots/b2-pdf.webp" alt="" loading="lazy">
+              <span class="turn" data-t="turnback">Volver ↻</span>
+            </span>
+          </span>
+        </button>
 
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-          <h3 data-t="f4h">Recorridos que se ven profesionales</h3>
-          <p data-t="f4p">Armas la ruta, pones hora y notas en cada parada, y sale un PDF con tu logotipo listo para mandarle al cliente por WhatsApp antes de salir.</p>
-        </div>
+        <button class="flip" type="button" aria-pressed="false" style="--hue:#B8921F">
+          <span class="inner">
+            <span class="face front">
+              <span class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><circle cx="16" cy="16" r="4"/><path d="M11 11l2 2"/></svg></span>
+              <h3 data-t="f3h">El inmueble que sí le sirve</h3>
+              <p data-t="f3p">Capturas el brief del comprador — presupuesto, zonas, recámaras, si es inversión o para vivir — y tu inventario se ordena solo, del que más encaja al que menos, con el porqué a la vista.</p>
+              <span class="turn" data-t="turn">Ver ↻</span>
+            </span>
+            <span class="face back">
+              <img src="shots/b3-match.webp" alt="" loading="lazy">
+              <span class="turn" data-t="turnback">Volver ↻</span>
+            </span>
+          </span>
+        </button>
 
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="11" rx="1.5"/><rect x="17" y="4" width="4" height="7" rx="1.5"/></svg></div>
-          <h3 data-t="f5h">Tu pipeline y tu comisión, de un vistazo</h3>
-          <p data-t="f5p">Cuánto tienes abierto, qué se cierra este mes, qué papeleo está frenando una operación y a quién llevas dos semanas sin contactar. Una pantalla, antes del primer café.</p>
-        </div>
+        <button class="flip" type="button" aria-pressed="false" style="--hue:#B4552F">
+          <span class="inner">
+            <span class="face front">
+              <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <h3 data-t="f4h">Recorridos que se ven profesionales</h3>
+              <p data-t="f4p">Armas la ruta, pones hora y notas en cada parada, y sale un PDF con tu logotipo listo para mandarle al cliente por WhatsApp antes de salir.</p>
+              <span class="turn" data-t="turn">Ver ↻</span>
+            </span>
+            <span class="face back">
+              <img src="shots/b4-recorrido.webp" alt="" loading="lazy">
+              <span class="turn" data-t="turnback">Volver ↻</span>
+            </span>
+          </span>
+        </button>
 
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 010 18a15 15 0 010-18z"/></svg></div>
-          <h3 data-t="f6h">Bilingüe de verdad</h3>
-          <p data-t="f6p">Tú en inglés, tus asesores en español, los mismos registros. El expediente de un comprador extranjero y el de un vendedor local viven en el mismo sistema, sin traducir nada dos veces.</p>
-        </div>
+        <button class="flip" type="button" aria-pressed="false" style="--hue:#7A5391">
+          <span class="inner">
+            <span class="face front">
+              <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="5" height="16" rx="1.5"/><rect x="10" y="4" width="5" height="11" rx="1.5"/><rect x="17" y="4" width="4" height="7" rx="1.5"/></svg></span>
+              <h3 data-t="f5h">Tu pipeline y tu comisión, de un vistazo</h3>
+              <p data-t="f5p">Cuánto tienes abierto, qué se cierra este mes, qué papeleo está frenando una operación y a quién llevas dos semanas sin contactar. Una pantalla, antes del primer café.</p>
+              <span class="turn" data-t="turn">Ver ↻</span>
+            </span>
+            <span class="face back">
+              <img src="shots/b5-comision.webp" alt="" loading="lazy">
+              <span class="turn" data-t="turnback">Volver ↻</span>
+            </span>
+          </span>
+        </button>
+
+        <button class="flip" type="button" aria-pressed="false" style="--hue:#4E9A8F">
+          <span class="inner">
+            <span class="face front">
+              <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 010 18a15 15 0 010-18z"/></svg></span>
+              <h3 data-t="f6h">Bilingüe de verdad</h3>
+              <p data-t="f6p">Tú en inglés, tus asesores en español, los mismos registros. El expediente de un comprador extranjero y el de un vendedor local viven en el mismo sistema, sin traducir nada dos veces.</p>
+              <span class="turn" data-t="turn">Ver ↻</span>
+            </span>
+            <span class="face back">
+              <img src="shots/b6-bilingue.webp" alt="" loading="lazy">
+              <span class="turn" data-t="turnback">Volver ↻</span>
+            </span>
+          </span>
+        </button>
+
       </div>
     </div>
   </section>
@@ -389,7 +487,7 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
 
   <section id="precios">
     <div class="wrap">
-      <div class="sechead">
+      <div class="sechead mid">
         <span class="kicker" data-t="k3">Precios</span>
         <h2 data-t="h2c">Dos planes. En pesos, con IVA a la vista.</h2>
         <p data-t="p2c">Sin costo de instalación, sin contrato anual obligatorio y sin cobrar por cada contacto que agregas.</p>
@@ -407,7 +505,7 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
             <li data-t="pl1c">50 lecturas de documentos al mes</li>
             <li data-t="pl1d">2 GB para fotos y PDFs</li>
           </ul>
-          <a class="btn btn-ghost js-app" href="#" data-t="pl1cta">Probar 14 días</a>
+          <a class="btn btn-ghost js-app" href="#" data-t="pl1cta">Probar 14 días gratis</a>
         </div>
 
         <div class="plan featured">
@@ -421,11 +519,11 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
             <li data-t="pl2c">250 lecturas de documentos al mes</li>
             <li data-t="pl2d">20 GB para fotos y PDFs</li>
           </ul>
-          <a class="btn btn-primary js-app" href="#" data-t="pl2cta">Probar 14 días</a>
+          <a class="btn btn-primary js-app" href="#" data-t="pl2cta">Probar 14 días gratis</a>
         </div>
       </div>
 
-      <p class="pricenote" data-t="pnote">Al año son doce meses al precio de diez. La tarjeta, las facturas y la cancelación se manejan en Stripe — aquí nunca se guardan datos de tarjetas.</p>
+      <p class="pricenote" data-t="pnote">Los primeros 14 días no se cobran y no piden tarjeta. Al año son doce meses al precio de diez. La tarjeta, las facturas y la cancelación se manejan en Stripe — aquí nunca se guardan datos de tarjetas.</p>
     </div>
   </section>
 
@@ -433,10 +531,8 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
   <section>
     <div class="wrap">
       <div class="refer">
-        <div>
-          <h3 data-t="refh">Recomienda a un colega y los dos ganan un mes.</h3>
-          <p data-t="refp">Su primer mes es gratis. El tuyo se acredita cuando su primer pago se liquida — así que solo vale algo si de verdad se queda. Tu código está dentro de la app.</p>
-        </div>
+        <h3 data-t="refh">Recomienda a un colega y los dos ganan un mes.</h3>
+        <p data-t="refp">Su primer mes es gratis. El tuyo se acredita cuando su primer pago se liquida. Tu código está dentro de la app.</p>
       </div>
     </div>
   </section>
@@ -444,7 +540,7 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
 
   <section id="preguntas">
     <div class="wrap">
-      <div class="sechead">
+      <div class="sechead mid">
         <span class="kicker" data-t="k4">Preguntas</span>
         <h2 data-t="h2d">Lo que preguntan antes de entrar.</h2>
       </div>
@@ -467,12 +563,12 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
           <div class="ans" data-t="a4">Sí. Es una página web, así que se abre en el navegador del celular, de la tablet o de la computadora, sin instalar nada ni pasar por una tienda de apps.</div>
         </details>
         <details>
-          <summary data-t="q5">¿Sirve fuera de Yucatán?</summary>
-          <div class="ans" data-t="a5">Sí. Las zonas y las etapas las nombras tú, y el expediente sigue los documentos que pide una notaría mexicana, no solo los de Mérida. Aquí es donde se probó, todos los días, en operaciones reales.</div>
+          <summary data-t="q5">¿Qué hace exactamente la inteligencia artificial?</summary>
+          <div class="ans" data-t="a5">Lee los documentos que tú le sueltas — una ficha técnica, un avalúo, una conversación de WhatsApp — y llena el formulario por ti. No fija precios, no le escribe a nadie y no hace nada que tú no revises y guardes.</div>
         </details>
         <details>
-          <summary data-t="q6">¿Qué relación tiene con Naah Collective?</summary>
-          <div class="ans" data-t="a6">Naah Collective es una inmobiliaria en Mérida, y este sistema se construyó para trabajar ahí. Funcionó, así que ahora se vende aparte. Son marcas hermanas: tus datos no se comparten con la inmobiliaria ni con nadie más.</div>
+          <summary data-t="q6">¿Sirve fuera de Yucatán?</summary>
+          <div class="ans" data-t="a6">Sí. Las zonas y las etapas las nombras tú, y el expediente sigue los documentos que pide una notaría mexicana, no solo los de Mérida. Aquí es donde se probó, todos los días, en operaciones reales.</div>
         </details>
       </div>
     </div>
@@ -483,12 +579,18 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
     <div class="wrap">
       <div class="band">
         <h2 data-t="bandh">Pruébalo con tu propia cartera.</h2>
-        <p data-t="bandp">Catorce días. Sube tres inmuebles y un comprador, y vas a ver si te sirve.</p>
+        <p data-t="bandp">Sube tres inmuebles y un comprador, y vas a ver si te sirve.</p>
         <div class="cta">
           <a class="btn btn-primary js-app" href="#" data-t="bandcta1">Empieza gratis</a>
           <a class="btn btn-ghost js-wa" href="#" data-t="bandcta2">Prefiero que me lo enseñes</a>
         </div>
-        <p class="fineprint" data-t="bandfine">Sin tarjeta, sin llamada de ventas, sin instalación.</p>
+        <p class="trial">
+          <b data-t="trial1b">14 días gratis</b>
+          <span class="dot">·</span>
+          <span data-t="trial2b">Sin tarjeta</span>
+          <span class="dot">·</span>
+          <span data-t="trial3b">Sin llamada de ventas</span>
+        </p>
       </div>
     </div>
   </section>
@@ -497,9 +599,9 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
 
 <footer>
   <div class="wrap foot">
-    <span>© <span id="year">2026</span> Naah</span>
-    <span data-t="footloc">Mérida, Yucatán, México</span>
-    <a href="https://naahcollective.com" target="_blank" rel="noopener" data-t="footsib">Una marca hermana de Naah Collective</a>
+    <span>© <span id="year">2026</span> naah</span>
+    <a href="terminos.html" data-t="footterms">Términos y condiciones</a>
+    <a href="privacidad.html" data-t="footpriv">Aviso de privacidad</a>
     <span class="spacer"></span>
     <a class="js-wa" href="#">WhatsApp</a>
     <a class="js-app" href="#" data-t="footsignin">Entrar</a>
@@ -514,10 +616,7 @@ footer{margin-top:84px;border-top:1px solid var(--line);padding:32px 0 56px}
 (() => {
 "use strict";
 
-/* ============================================================
-   The two things that change when the world does. Both are one
-   line, on purpose.
-   ============================================================ */
+/* The two things that change when the world does. */
 const APP_URL = "https://joshnorthcott.github.io/naah-crm/";
 const WHATSAPP = "5219993355302";          // +52 1 999 335 5302
 
@@ -530,32 +629,38 @@ const WHATSAPP = "5219993355302";          // +52 1 999 335 5302
    English is the swap.
    ============================================================ */
 const EN = {
-  by: "by Naah Collective",
   nav1: "What it does", nav2: "Pricing", nav3: "Questions", signin: "Sign in",
 
-  eyebrow: "Mérida · Yucatán",
-  h1: "The CRM for people who sell houses <em>here</em>.",
-  lede: "Your inventory, your buyers, your viewings and the file a Mexican notary actually asks for — in one place, in your language, built around how a deal really closes in Yucatán.",
+  h1: "Built for realtors, by realtors.",
+  lede: "The CRM for people who sell houses here: your inventory, your buyers, your viewings and the file a Mexican notary actually asks for — in one place, in your language.",
   cta1: "Start free", cta2: "Talk to me on WhatsApp",
-  fine1: "14 days free. No card. Cancel whenever.",
-  shotph: "A screenshot of the Today screen goes here",
-  shotph2: "Save the image as <code>hoy.png</code> next to this file and it appears on its own.",
+  trial1: "14 days free", trial2: "No card",
+  trial3: "No sales call", trial4: "Cancel whenever",
+  trial1b: "14 days free", trial2b: "No card", trial3b: "No sales call",
+
+  reel1: "Today", reel2: "Inventory", reel3: "Matches", reel4: "Viewings", reel5: "Deals",
+  reelcap1: "What needs chasing, and what closes this month.",
+  reelcap2: "Your listings, grouped by whose they are.",
+  reelcap3: "Your inventory ranked against one buyer's brief.",
+  reelcap4: "A route, with a time and a note on every stop.",
+  reelcap5: "Every live deal, its paperwork and its commission.",
 
   k1: "What it does",
   h2a: "Six things that currently live in WhatsApp and a spreadsheet.",
-  p2a: "None of them is a module nobody opens. They're the six that eat your afternoon.",
+  p2a: "None of them is a module nobody opens. They're the six that eat your afternoon. Tap any of them to see inside.",
+  turn: "See ↻", turnback: "Back ↻",
 
   f1h: "The file the notary asks for",
   f1p: "Escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio. The real list, per person and per property, ticked once — and it serves whether they're buying or selling.",
-  f2h: "Drop the PDF, the listing fills itself",
-  f2p: "Factsheet, avalúo or a developer's price list: it reads the document and fills in price, m², bedrooms, handover and commission. You check it before saving — nothing saves itself.",
+  f2h: "Drop the PDF, the AI fills the listing",
+  f2p: "Factsheet, avalúo or a developer's price list: the AI reads the document and fills in price, m², bedrooms, handover and commission. You check it before saving — nothing saves itself.",
   f3h: "The property that actually suits them",
-  f3p: "Enter the buyer's brief — budget, zones, bedrooms, investment or to live in — and your inventory sorts itself, best fit first.",
+  f3p: "Enter the buyer's brief — budget, zones, bedrooms, investment or to live in — and your inventory sorts itself, best fit first, with the reasons in plain sight.",
   f4h: "Viewings that look professional",
   f4p: "Build the route, put a time and a note on each stop, and out comes a PDF with your logo, ready to send the client on WhatsApp before you set off.",
   f5h: "Your pipeline and your commission, at a glance",
   f5p: "What's open, what closes this month, which paperwork is holding a deal up, and who you haven't spoken to in a fortnight. One screen, before the first coffee.",
-  f6h: "Properly bilingual",
+  f6h: "Truly bilingual",
   f6p: "You in English, your agents in Spanish, the same records. A foreign buyer's file and a local vendor's file live in the same system, with nothing translated twice.",
 
   k2: "Getting started", h2b: "An afternoon, not a project.",
@@ -572,16 +677,16 @@ const EN = {
   permo: "/ mo", pl1iva: "$114.84 with IVA",
   pl1a: "1 user", pl1b: "Unlimited inventory and contacts",
   pl1c: "50 document reads a month", pl1d: "2 GB for photos and PDFs",
-  pl1cta: "Try 14 days",
+  pl1cta: "Try 14 days free",
   pl2n: "Agency", pl2w: "Owner, manager and up to five agents sharing one inventory.",
   permo2: "/ mo", pl2iva: "$346.84 with IVA",
   pl2a: "7 users", pl2b: "Each agent sees only their own buyers",
   pl2c: "250 document reads a month", pl2d: "20 GB for photos and PDFs",
-  pl2cta: "Try 14 days",
-  pnote: "Annually it's twelve months for the price of ten. The card, the invoices and cancellation are handled on Stripe — no card details are ever stored here.",
+  pl2cta: "Try 14 days free",
+  pnote: "The first 14 days are not charged and ask for no card. Annually it's twelve months for the price of ten. The card, the invoices and cancellation are handled on Stripe — no card details are ever stored here.",
 
   refh: "Refer a colleague and you both get a month.",
-  refp: "Their first month is free. Yours is credited once their first payment clears — so it's worth something only if they actually stay. Your code is inside the app.",
+  refp: "Their first month is free. Yours is credited once their first payment clears. Your code is inside the app.",
 
   k4: "Questions", h2d: "What people ask before signing up.",
   q1: "Is my data mine?",
@@ -592,45 +697,54 @@ const EN = {
   a3: "Your data stays exactly where it is and you can still read, search and export it. What pauses is adding and editing, and that resumes the moment you come back.",
   q4: "Does it work on a phone?",
   a4: "Yes. It's a web page, so it opens in the browser on a phone, a tablet or a computer, with nothing to install and no app store.",
-  q5: "Is it any use outside Yucatán?",
-  a5: "Yes. You name the zones and the stages yourself, and the file follows what a Mexican notary asks for, not only what Mérida asks for. Here is simply where it was tested, daily, on real deals.",
-  q6: "How is this related to Naah Collective?",
-  a6: "Naah Collective is an estate agency in Mérida, and this was built to run it. It worked, so now it's sold on its own. They're sister brands: your data isn't shared with the agency, or with anyone else.",
+  q5: "What exactly does the AI do?",
+  a5: "It reads the documents you hand it — a factsheet, an avalúo, a WhatsApp thread — and fills the form in for you. It doesn't set prices, it doesn't message anyone, and it does nothing you haven't checked and saved.",
+  q6: "Is it any use outside Yucatán?",
+  a6: "Yes. You name the zones and the stages yourself, and the file follows what a Mexican notary asks for, not only what Mérida asks for. Here is simply where it was tested, daily, on real deals.",
 
   bandh: "Try it on your own inventory.",
-  bandp: "Fourteen days. Load three properties and one buyer, and you'll know.",
+  bandp: "Load three properties and one buyer, and you'll know.",
   bandcta1: "Start free", bandcta2: "I'd rather you showed me",
-  bandfine: "No card, no sales call, no installation.",
 
-  footloc: "Mérida, Yucatán, Mexico",
-  footsib: "A sister brand of Naah Collective",
-  footsignin: "Sign in"
+  footterms: "Terms and conditions", footpriv: "Privacy notice", footsignin: "Sign in"
 };
 
 /* The Spanish is whatever the markup already says, captured once
-   before anything is swapped — so the two languages can never
-   drift apart in the way a second dictionary would allow. */
+   before anything is swapped — so the two languages can never drift
+   apart in the way a second dictionary would allow. */
 const ES = {};
 document.querySelectorAll("[data-t]").forEach(el => { ES[el.dataset.t] = el.innerHTML; });
 
-function paint(lang) {
+/* The carousel's captions have no element of their own, so they live
+   here in both languages. */
+Object.assign(ES, {
+  reel1: "Hoy", reel2: "Inventario", reel3: "Coincidencias",
+  reel4: "Recorridos", reel5: "Operaciones",
+  reelcap1: "A quién buscar, y qué se cierra este mes.",
+  reelcap2: "Tus inmuebles, agrupados por de quién son.",
+  reelcap3: "Tu inventario ordenado contra el brief de un comprador.",
+  reelcap4: "Una ruta, con hora y nota en cada parada.",
+  reelcap5: "Cada operación activa, su papeleo y su comisión."
+});
+
+let lang = "es";
+
+function paint(next) {
+  lang = next;
   const dict = lang === "en" ? EN : ES;
   document.querySelectorAll("[data-t]").forEach(el => {
     const v = dict[el.dataset.t];
     if (v != null) el.innerHTML = v;
   });
   document.documentElement.lang = lang;
-  document.title = lang === "en"
-    ? "Naah — real-estate CRM for Yucatán"
-    : "Naah — CRM inmobiliario para Yucatán";
+  document.title = lang === "en" ? "naah — real-estate CRM" : "naah — CRM inmobiliario";
   document.querySelectorAll("[data-lang]").forEach(b => {
     b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
   });
+  paintReel();
   try { localStorage.setItem("naah.site.lang", lang); } catch (e) { /* storage off */ }
 }
 
-/* ?lang= wins, then whatever they chose last time, then the
-   browser — and Spanish when none of those say otherwise. */
 function startingLang() {
   const q = new URLSearchParams(location.search).get("lang");
   if (q === "en" || q === "es") return q;
@@ -644,41 +758,106 @@ function startingLang() {
 document.querySelectorAll("[data-lang]").forEach(b => {
   b.addEventListener("click", () => paint(b.dataset.lang));
 });
-paint(startingLang());
+
+
+/* ============================================================
+   The carousel
+   ------------------------------------------------------------
+   Five seconds a slide: long enough to take a screen in, short
+   enough that nobody waits. It stops while the pointer is over it,
+   while it holds focus, and while the tab is in the background — an
+   animation nobody is watching is just battery.
+   ============================================================ */
+const reel = document.getElementById("reel");
+const track = document.getElementById("track");
+const dotsBox = document.getElementById("reelDots");
+const labelEl = document.getElementById("reelLabel");
+const slides = [...track.children];
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let at = 0, timer = null, held = false;
+
+slides.forEach((_, i) => {
+  const d = document.createElement("button");
+  d.type = "button";
+  d.addEventListener("click", () => { show(i); restart(); });
+  dotsBox.appendChild(d);
+});
+
+function paintReel() {
+  const dict = lang === "en" ? EN : ES;
+  labelEl.innerHTML = "<b>" + (dict["reel" + (at + 1)] || "") + "</b> — " +
+    (dict["reelcap" + (at + 1)] || "");
+  [...dotsBox.children].forEach((d, i) => {
+    d.setAttribute("aria-current", String(i === at));
+    d.setAttribute("aria-label", dict["reel" + (i + 1)] || String(i + 1));
+  });
+  slides.forEach((s, i) => {
+    const img = s.querySelector("img");
+    if (img) img.alt = (dict["reel" + (i + 1)] || "") + " — " + (dict["reelcap" + (i + 1)] || "");
+  });
+}
+
+function show(i) {
+  at = (i + slides.length) % slides.length;
+  track.style.transform = "translateX(-" + (at * 100) + "%)";
+  paintReel();
+}
+
+function restart() {
+  clearInterval(timer);
+  if (still) return;                 // let them move it themselves
+  timer = setInterval(() => { if (!held && !document.hidden) show(at + 1); }, 5000);
+}
+
+reel.addEventListener("mouseenter", () => { held = true; });
+reel.addEventListener("mouseleave", () => { held = false; });
+reel.addEventListener("focusin", () => { held = true; });
+reel.addEventListener("focusout", () => { held = false; });
+document.addEventListener("visibilitychange", restart);
+restart();
+
+
+/* ============================================================
+   The cards that turn over
+   ============================================================ */
+document.querySelectorAll(".flip").forEach(card => {
+  card.addEventListener("click", () => {
+    card.setAttribute("aria-pressed", String(card.getAttribute("aria-pressed") !== "true"));
+  });
+});
 
 
 /* ============================================================
    The links
    ------------------------------------------------------------
-   A referral code arrives on this page and has to survive the
-   journey into the app, which is where it is redeemed. Losing it
-   here would quietly cost somebody their free month.
+   A referral code arrives on this page and has to survive the trip
+   into the app, which is where it is redeemed. Losing it here would
+   quietly cost somebody their free month.
    ============================================================ */
 const ref = (new URLSearchParams(location.search).get("ref") || "")
   .trim().toUpperCase().slice(0, 12);
 
-const appLink = (() => {
-  if (!/^[A-Z0-9]+$/.test(ref)) return APP_URL;
-  return APP_URL + (APP_URL.includes("?") ? "&" : "?") + "ref=" + encodeURIComponent(ref);
-})();
+const appLink = /^[A-Z0-9]+$/.test(ref)
+  ? APP_URL + (APP_URL.includes("?") ? "&" : "?") + "ref=" + encodeURIComponent(ref)
+  : APP_URL;
 
 document.querySelectorAll(".js-app").forEach(a => { a.href = appLink; });
 
-const waText = () => document.documentElement.lang === "en"
-  ? "Hi Josh — I saw the Naah site and I'd like to see the CRM."
-  : "Hola Josh — vi la página de Naah y me gustaría ver el CRM.";
+const waText = () => lang === "en"
+  ? "Hi Josh — I saw the naah site and I'd like to see the CRM."
+  : "Hola Josh — vi la página de naah y me gustaría ver el CRM.";
 
 document.querySelectorAll(".js-wa").forEach(a => {
   a.target = "_blank";
   a.rel = "noopener";
+  a.href = "https://wa.me/" + WHATSAPP;
   a.addEventListener("click", e => {
-    /* Built at click time so the message follows whichever
-       language they are actually reading. */
+    /* Built at click time so the message follows whichever language
+       they are actually reading. */
     e.preventDefault();
     window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(waText()),
                 "_blank", "noopener");
   });
-  a.href = "https://wa.me/" + WHATSAPP;
 });
 
 
@@ -692,56 +871,7 @@ const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
 addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
-/* The screenshot is optional: drop hoy.png beside this file and it
-   replaces the dashed placeholder. No image, no broken picture.
-
-   It also changes with the toggle, which is the shortest possible
-   proof of the bilingual claim two sections further down. */
-(() => {
-  const host = document.getElementById("shot");
-  const CAP = {
-    es: "La pantalla de Hoy: a quién buscar, qué papel falta y qué se cierra este mes.",
-    en: "The Today screen: who to chase, which document is missing, what closes this month."
-  };
-  const shown = {};
-
-  const show = () => {
-    const lang = document.documentElement.lang === "en" ? "en" : "es";
-    const file = lang === "en" ? "hoy-en.png" : "hoy.png";
-    if (shown[lang] === false) return;                 // that one is missing
-
-    const img = new Image();
-    img.onload = () => {
-      shown[lang] = true;
-      host.classList.remove("placeholder");
-      img.alt = CAP[lang];
-      const cap = document.createElement("div");
-      cap.className = "caption";
-      cap.textContent = CAP[lang];
-      host.replaceChildren(img, cap);
-    };
-    img.onerror = () => {
-      shown[lang] = false;
-      /* Fall back to the Spanish one rather than to a dashed box. */
-      if (lang === "en" && shown.es !== false) {
-        const es = new Image();
-        es.onload = () => {
-          host.classList.remove("placeholder");
-          es.alt = CAP.en;
-          const cap = document.createElement("div");
-          cap.className = "caption";
-          cap.textContent = CAP.en;
-          host.replaceChildren(es, cap);
-        };
-        es.src = "hoy.png";
-      }
-    };
-    img.src = file;
-  };
-
-  show();
-  document.querySelectorAll("[data-lang]").forEach(b => b.addEventListener("click", show));
-})();
+paint(startingLang());
 
 })();
 </script>
