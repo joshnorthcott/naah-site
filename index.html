@@ -140,6 +140,9 @@ header.scrolled{border-bottom-color:var(--line)}
 .reel .dots button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* --- sections --- */
+/* The header is sticky, so an anchor jump has to stop short of it or
+   the heading it jumped to ends up underneath. */
+section[id], #top{scroll-margin-top:84px}
 section{padding:86px 0}
 section + section{padding-top:0}
 .sechead{max-width:640px;margin-bottom:40px}
@@ -174,7 +177,9 @@ section + section{padding-top:0}
   border-top:3px solid var(--hue,var(--accent));overflow:hidden;
 }
 .flip .front{padding:24px 22px 44px}
-.flip .back{transform:rotateY(180deg)}
+/* A tint under the image, so a back that has not finished loading
+   reads as a card rather than as a hole. */
+.flip .back{transform:rotateY(180deg);background:var(--wash)}
 .flip .back img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block}
 .flip .ico{
   width:36px;height:36px;border-radius:7px;display:grid;place-items:center;margin-bottom:16px;
@@ -489,7 +494,7 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
     <div class="wrap">
       <div class="sechead mid">
         <span class="kicker" data-t="k3">Precios</span>
-        <h2 data-t="h2c">Dos planes. En pesos, con IVA a la vista.</h2>
+        <h2 data-t="h2c">Dos planes. En pesos, con IVA incluido.</h2>
         <p data-t="p2c">Sin costo de instalación, sin contrato anual obligatorio y sin cobrar por cada contacto que agregas.</p>
       </div>
 
@@ -497,12 +502,12 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
         <div class="plan">
           <div class="pname" data-t="pl1n">Individual</div>
           <div class="pwho" data-t="pl1w">Un asesor por su cuenta. Contactos, inventario, recorridos y cierres.</div>
-          <div class="price">$99 <span data-t="permo">/ mes</span></div>
-          <div class="iva" data-t="pl1iva">$114.84 con IVA</div>
+          <div class="price">$199 <span data-t="permo">/ mes</span></div>
+          <div class="iva" data-t="pl1iva">IVA incluido</div>
           <ul>
             <li data-t="pl1a">1 usuario</li>
             <li data-t="pl1b">Inventario y contactos sin límite</li>
-            <li data-t="pl1c">50 lecturas de documentos al mes</li>
+            <li data-t="pl1c">40 lecturas de documentos al mes</li>
             <li data-t="pl1d">2 GB para fotos y PDFs</li>
           </ul>
           <a class="btn btn-ghost js-app" href="#" data-t="pl1cta">Probar 14 días gratis</a>
@@ -510,20 +515,20 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
 
         <div class="plan featured">
           <div class="pname" data-t="pl2n">Agencia</div>
-          <div class="pwho" data-t="pl2w">Dueño, gerente y hasta cinco asesores compartiendo un inventario.</div>
-          <div class="price">$299 <span data-t="permo2">/ mes</span></div>
-          <div class="iva" data-t="pl2iva">$346.84 con IVA</div>
+          <div class="pwho" data-t="pl2w">Un equipo pequeño: hasta cinco personas compartiendo un inventario.</div>
+          <div class="price">$499 <span data-t="permo2">/ mes</span></div>
+          <div class="iva" data-t="pl2iva">IVA incluido · $100 por asesor</div>
           <ul>
-            <li data-t="pl2a">7 usuarios</li>
+            <li data-t="pl2a">5 usuarios</li>
             <li data-t="pl2b">Cada asesor ve solo sus compradores</li>
-            <li data-t="pl2c">250 lecturas de documentos al mes</li>
+            <li data-t="pl2c">200 lecturas de documentos al mes</li>
             <li data-t="pl2d">20 GB para fotos y PDFs</li>
           </ul>
           <a class="btn btn-primary js-app" href="#" data-t="pl2cta">Probar 14 días gratis</a>
         </div>
       </div>
 
-      <p class="pricenote" data-t="pnote">Los primeros 14 días no se cobran y no piden tarjeta. Al año son doce meses al precio de diez. La tarjeta, las facturas y la cancelación se manejan en Stripe — aquí nunca se guardan datos de tarjetas.</p>
+      <p class="pricenote" data-t="pnote">Los primeros 14 días no se cobran y no piden tarjeta. ¿Más de cinco personas? Cada lugar adicional cuesta $99 al mes. Al año son doce meses al precio de diez. La tarjeta, las facturas y la cancelación se manejan en Stripe — aquí nunca se guardan datos de tarjetas.</p>
     </div>
   </section>
 
@@ -671,19 +676,19 @@ const EN = {
   s3h: "Work from Today",
   s3p: "The home screen tells you what's next: who to chase, which document is missing, what closes this month.",
 
-  k3: "Pricing", h2c: "Two plans. In pesos, with IVA in plain sight.",
+  k3: "Pricing", h2c: "Two plans. In pesos, IVA included.",
   p2c: "No setup fee, no compulsory annual contract, and no charging you per contact you add.",
   pl1n: "Solo", pl1w: "One agent working alone. Contacts, inventory, viewings and closings.",
-  permo: "/ mo", pl1iva: "$114.84 with IVA",
+  permo: "/ mo", pl1iva: "IVA included",
   pl1a: "1 user", pl1b: "Unlimited inventory and contacts",
-  pl1c: "50 document reads a month", pl1d: "2 GB for photos and PDFs",
+  pl1c: "40 document reads a month", pl1d: "2 GB for photos and PDFs",
   pl1cta: "Try 14 days free",
-  pl2n: "Agency", pl2w: "Owner, manager and up to five agents sharing one inventory.",
-  permo2: "/ mo", pl2iva: "$346.84 with IVA",
-  pl2a: "7 users", pl2b: "Each agent sees only their own buyers",
-  pl2c: "250 document reads a month", pl2d: "20 GB for photos and PDFs",
+  pl2n: "Agency", pl2w: "A small team: up to five people sharing one inventory.",
+  permo2: "/ mo", pl2iva: "IVA included · $100 per agent",
+  pl2a: "5 users", pl2b: "Each agent sees only their own buyers",
+  pl2c: "200 document reads a month", pl2d: "20 GB for photos and PDFs",
   pl2cta: "Try 14 days free",
-  pnote: "The first 14 days are not charged and ask for no card. Annually it's twelve months for the price of ten. The card, the invoices and cancellation are handled on Stripe — no card details are ever stored here.",
+  pnote: "The first 14 days are not charged and ask for no card. More than five people? Each extra seat is $99 a month. Annually it's twelve months for the price of ten. The card, the invoices and cancellation are handled on Stripe — no card details are ever stored here.",
 
   refh: "Refer a colleague and you both get a month.",
   refp: "Their first month is free. Yours is credited once their first payment clears. Your code is inside the app.",
