@@ -122,7 +122,7 @@ header.scrolled{border-bottom-color:var(--line)}
 .trial .dot{color:var(--accent)}
 
 /* --- one still screen under the hero --- */
-.reel{margin:54px 0 0}
+.reel{margin:54px 0 86px}
 .reel .frame{
   border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);
   box-shadow:var(--shadow);overflow:hidden;
@@ -134,7 +134,11 @@ header.scrolled{border-bottom-color:var(--line)}
    the heading it jumped to ends up underneath. */
 section[id], #top{scroll-margin-top:84px}
 section{padding:86px 0}
-section + section{padding-top:0}
+/* Sections alternate between the grey ground and white sheets with a
+   faint rule top and bottom, so the page reads as chapters rather
+   than one long scroll. Two grey sections in a row share their gap. */
+section:not(.sheet) + section:not(.sheet){padding-top:0}
+.sheet{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sechead{max-width:640px;margin-bottom:40px}
 .sechead.mid{margin-left:auto;margin-right:auto;text-align:center}
 .sechead h2{font-size:clamp(26px,3.6vw,35px)}
@@ -181,6 +185,29 @@ section + section{padding-top:0}
   .feat:nth-child(even) .copy{order:0}
   .feat .shot{height:340px;padding:20px 20px 0}
 }
+
+/* --- about --- */
+.about{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:start}
+.about .sechead{margin-bottom:0}
+.about .story{margin-top:18px;color:var(--ink-2);font-size:17px;display:grid;gap:16px;max-width:58ch}
+.about .facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.about .fact{padding:20px 0;border-bottom:1px solid var(--line)}
+.about .fact h3{font-size:17px;margin-bottom:6px}
+.about .fact p{color:var(--muted);font-size:15px}
+@media (max-width:820px){ .about{grid-template-columns:1fr;gap:36px} }
+
+/* --- why naah: six short reasons on a hairline grid --- */
+.whys{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);border-left:1px solid var(--line);
+}
+.why{padding:28px 26px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;display:block;margin-bottom:16px}
+.why h3{font-size:17px;margin-bottom:7px}
+.why p{color:var(--muted);font-size:15px}
+@media (max-width:920px){ .whys{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:600px){ .whys{grid-template-columns:1fr} }
 
 /* --- steps --- */
 .steps{display:grid;gap:28px;grid-template-columns:repeat(3,1fr);counter-reset:s}
@@ -290,6 +317,7 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
     <a class="mark" href="#top">naah</a>
     <nav>
       <a class="navlink" href="#que-hace" data-t="nav1">Qué hace</a>
+      <a class="navlink" href="#nosotros" data-t="nav4">Nosotros</a>
       <a class="navlink" href="#precios" data-t="nav2">Precios</a>
       <a class="navlink" href="#preguntas" data-t="nav3">Preguntas</a>
       <div class="langtog" role="group" aria-label="Idioma / Language">
@@ -332,7 +360,7 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
   </div>
 
 
-  <section id="que-hace">
+  <section id="que-hace" class="sheet">
     <div class="wrap">
       <div class="sechead">
         <span class="kicker" data-t="k1">Qué hace</span>
@@ -458,6 +486,36 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
   </section>
 
 
+  <section id="nosotros" class="sheet">
+    <div class="wrap about">
+      <div>
+        <div class="sechead">
+          <span class="kicker" data-t="k5">Nosotros</span>
+          <h2 data-t="h2e">Hecho en Mérida, por gente que vende en Mérida.</h2>
+        </div>
+        <div class="story">
+          <p data-t="ab1">naah nació dentro de Naah Collective, una inmobiliaria que conecta a inversionistas locales y extranjeros con propiedades en el Centro, Cholul y Conkal. Ningún CRM entendía cómo se vende aquí: el expediente que pide el notario, el comprador que escribe en inglés y el vendedor que contesta en español.</p>
+          <p data-t="ab2">Así que lo construimos nosotros, y cada función se probó primero en operaciones reales antes de llegar a ti.</p>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact">
+          <h3 data-t="ab3h">Independiente</h3>
+          <p data-t="ab3p">Sin inversionistas de fuera y sin un portal detrás. Lo que se construye sale de lo que piden los asesores que lo usan.</p>
+        </div>
+        <div class="fact">
+          <h3 data-t="ab4h">Hecho para el mercado yucateco</h3>
+          <p data-t="ab4p">Zonas, etapas y papeleo pensados para vender en Yucatán, y probados aquí a diario en operaciones reales.</p>
+        </div>
+        <div class="fact">
+          <h3 data-t="ab5h">Un equipo local y extranjero</h3>
+          <p data-t="ab5p">Somos locales y extranjeros que vivimos aquí, igual que tus clientes: el comprador que llega de fuera y el vendedor de toda la vida, cada uno en su idioma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <section id="precios">
     <div class="wrap">
       <div class="sechead mid">
@@ -511,6 +569,48 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
   </section>
 
 
+  <section id="por-que" class="sheet">
+    <div class="wrap">
+      <div class="sechead mid">
+        <span class="kicker" data-t="k6">Por qué naah</span>
+        <h2 data-t="h2f">Lo que no te va a quitar el tiempo.</h2>
+      </div>
+      <div class="whys">
+        <div class="why">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="13" height="10" rx="1.5"/><path d="M7 18h5"/><rect x="17" y="9" width="5" height="11" rx="1.2"/></svg>
+          <h3 data-t="w1h">En cualquier pantalla</h3>
+          <p data-t="w1p">Celular, tableta o computadora. Es una página web: nada que instalar y nada que actualizar.</p>
+        </div>
+        <div class="why">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9.5 2.5h5"/></svg>
+          <h3 data-t="w2h">Listo en una tarde</h3>
+          <p data-t="w2p">Sin consultores ni costo de implementación. Sueltas tus PDFs y empiezas a trabajar.</p>
+        </div>
+        <div class="why">
+          <svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.3-4.9L4 8"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0014.3 4.9L20 16"/><path d="M20 20v-4h-4"/></svg>
+          <h3 data-t="w3h">Sincronizado en vivo</h3>
+          <p data-t="w3p">Lo que guardas en el celular ya está en la computadora, y tu equipo lo ve al momento.</p>
+        </div>
+        <div class="why">
+          <svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg>
+          <h3 data-t="w4h">IA incluida</h3>
+          <p data-t="w4p">Lee avalúos, fichas y conversaciones de WhatsApp y llena el formulario. Sin cuentas aparte.</p>
+        </div>
+        <div class="why">
+          <svg viewBox="0 0 24 24"><path d="M20.5 13.5l-7 7a1.5 1.5 0 01-2.1 0L3 12.1V3h9.1l8.4 8.4a1.5 1.5 0 010 2.1z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg>
+          <h3 data-t="w5h">Sin costos ocultos</h3>
+          <p data-t="w5p">Precio en pesos con IVA incluido. Sin cuota de alta, sin contrato anual obligatorio.</p>
+        </div>
+        <div class="why">
+          <svg viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 01-12.4 7.5L3 21l1.5-5.4A8.5 8.5 0 1121 12z"/><path d="M9 11h.01M12 11h.01M15 11h.01"/></svg>
+          <h3 data-t="w6h">Soporte 100% humano</h3>
+          <p data-t="w6p">Escribes por WhatsApp y te contesta una persona que conoce el producto, no un bot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <section id="preguntas">
     <div class="wrap">
       <div class="sechead mid">
@@ -541,7 +641,7 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
         </details>
         <details>
           <summary data-t="q6">¿Sirve fuera de Yucatán?</summary>
-          <div class="ans" data-t="a6">Sí. Las zonas y las etapas las nombras tú, y el expediente sigue los documentos que pide una notaría mexicana, no solo los de Mérida. Aquí es donde se probó, todos los días, en operaciones reales.</div>
+          <div class="ans" data-t="a6">Por ahora está hecho para Yucatán: las zonas, las etapas y el expediente son los de aquí. Si trabajas en otro estado, escríbenos por WhatsApp y te decimos claramente si te sirve.</div>
         </details>
       </div>
     </div>
@@ -671,6 +771,31 @@ const EN = {
   s3h: "Work from Today",
   s3p: "The home screen tells you what's next: who to chase, which document is missing, what closes this month.",
 
+  nav4: "About",
+  k5: "About us",
+  h2e: "Made in Mérida, by people who sell in Mérida.",
+  ab1: "naah grew out of Naah Collective, an agency connecting local and international investors with properties in the Centro, Cholul and Conkal. No CRM understood how selling works here: the file the notary asks for, the buyer who writes in English and the vendor who answers in Spanish.",
+  ab2: "So we built it ourselves, and every feature was tried on real deals before it reached you.",
+  ab3h: "Independent",
+  ab3p: "No outside investors and no portal behind it. What gets built comes from what the agents using it ask for.",
+  ab4h: "Built for the Yucatán market",
+  ab4p: "Zones, stages and paperwork designed for selling in Yucatán, and tested here every day on real deals.",
+  ab5h: "A team of locals and expats",
+  ab5p: "We’re locals and expats who live here, just like your clients: the buyer arriving from abroad and the vendor who’s been here all their life, each in their own language.",
+  k6: "Why naah",
+  h2f: "What won’t eat your time.",
+  w1h: "On any screen",
+  w1p: "Phone, tablet or computer. It’s a web page: nothing to install and nothing to update.",
+  w2h: "Ready in an afternoon",
+  w2p: "No consultants and no implementation fee. Drop in your PDFs and get to work.",
+  w3h: "Synced live",
+  w3p: "What you save on your phone is already on your computer, and your team sees it straight away.",
+  w4h: "AI included",
+  w4p: "It reads avalúos, factsheets and WhatsApp threads and fills in the form. No separate accounts.",
+  w5h: "No hidden costs",
+  w5p: "Priced in pesos with IVA included. No signup fee, no compulsory annual contract.",
+  w6h: "100% human support",
+  w6p: "Message on WhatsApp and a person who knows the product answers, not a bot.",
   k3: "Pricing", h2c: "Two plans. In pesos, IVA included.",
   p2c: "No setup fee, no compulsory annual contract, and no charging you per contact you add.",
   pl1n: "Solo", pl1w: "One agent working alone. Contacts, inventory, viewings and closings.",
@@ -700,7 +825,7 @@ const EN = {
   q5: "What exactly does the AI do?",
   a5: "It reads the documents you hand it — a factsheet, an avalúo, a WhatsApp thread — and fills the form in for you. It doesn't set prices, it doesn't message anyone, and it does nothing you haven't checked and saved.",
   q6: "Is it any use outside Yucatán?",
-  a6: "Yes. You name the zones and the stages yourself, and the file follows what a Mexican notary asks for, not only what Mérida asks for. Here is simply where it was tested, daily, on real deals.",
+  a6: "For now it’s built for Yucatán: the zones, the stages and the paperwork are the ones used here. If you work in another state, message us on WhatsApp and we’ll tell you plainly whether it fits.",
 
   bandh: "Try it on your own inventory.",
   bandp: "Load three properties and one buyer, and you'll know.",
