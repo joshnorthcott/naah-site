@@ -105,8 +105,8 @@ header.scrolled{border-bottom-color:var(--line)}
 .btn svg{width:17px;height:17px;flex:none}
 
 /* --- hero --- */
-.hero{padding:72px 0 0;max-width:820px}
-.hero h1{font-size:clamp(36px,5.8vw,60px)}
+.hero{padding:72px 0 0;max-width:900px}
+.hero h1{font-size:clamp(33px,4.9vw,53px)}
 .hero .lede{margin-top:20px;font-size:clamp(17px,2.1vw,20px);color:var(--muted);max-width:60ch}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 
@@ -143,6 +143,7 @@ section:not(.sheet) + section:not(.sheet){padding-top:0}
 .sechead.mid{margin-left:auto;margin-right:auto;text-align:center}
 .sechead h2{font-size:clamp(26px,3.6vw,35px)}
 .sechead p{margin-top:14px;color:var(--muted);font-size:17px}
+.kicker.plain{text-transform:none;letter-spacing:.02em;font-size:13.5px;color:var(--muted)}
 .kicker{
   font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.18em;
   text-transform:uppercase;color:var(--accent);display:block;margin-bottom:15px;
@@ -337,8 +338,9 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
 
   <div class="wrap">
     <div class="hero">
-      <h1 data-t="h1">Hecho por asesores, para asesores.</h1>
-      <p class="lede" data-t="lede">El CRM para quien vende casas aquí: tu cartera, tus prospectos, tus recorridos y el expediente que pide el notario, en un solo lugar y en tu idioma.</p>
+      <span class="kicker plain" data-t="herok">Hecho por asesores, para asesores.</span>
+      <h1 data-t="h1">Todo lo que necesitas para vender propiedades, en un solo lugar.</h1>
+      <p class="lede" data-t="lede">Gestiona tu cartera, prospectos, recorridos y expedientes desde un solo CRM, diseñado para la forma en que se vende en el sector inmobiliario de Yucatán.</p>
       <div class="cta">
         <a class="btn btn-primary js-app" href="#" data-t="cta1">Empieza gratis</a>
         <a class="btn btn-ghost js-wa" href="#" data-t="cta2">
@@ -352,7 +354,7 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
         <span class="dot">·</span>
         <span data-t="trial3">Sin llamada de ventas</span>
         <span class="dot">·</span>
-        <span data-t="trial4">Cancelas cuando quieras</span>
+        <span data-t="trial4">Cancela cuando quieras</span>
       </p>
     </div>
 
@@ -367,9 +369,8 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
   <section id="que-hace" class="sheet">
     <div class="wrap">
       <div class="sechead">
-        <span class="kicker" data-t="k1">Qué hace</span>
-        <h2 data-t="h2a">Seis cosas que hoy viven en WhatsApp y en una hoja de cálculo.</h2>
-        <p data-t="p2a">Ninguna es un módulo que nadie abre. Son las seis que te quitan la tarde.</p>
+        <span class="kicker" data-t="k1">Qué hace el CRM</span>
+        <h2 data-t="h2a">naah reúne en un solo lugar las tareas que más tiempo te quitan y que necesitas tener bajo control para cerrar tus operaciones.</h2>
       </div>
 
       <div class="feats">
@@ -377,13 +378,12 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
         <article class="feat" style="--hue:#2C5282">
           <div class="copy">
             <span class="tag" data-t="f1k">Expediente</span>
-            <h3 data-t="f1h">El expediente que pide el notario</h3>
-            <p data-t="f1p">Escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio. La lista real, por persona y por inmueble, marcada una sola vez — y sirve igual si compra o si vende.</p>
+            <h3 data-t="f1h">El expediente que necesitas para cerrar una operación</h3>
+            <p data-t="f1p">Ten toda la documentación de cada persona e inmueble en un solo lugar: escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio y más.</p>
             <ul>
-            <li data-t="f1b1">Se captura una vez y sirve si compra o si vende</li>
-            <li data-t="f1b2">Marcas N/A lo que no aplica, y deja de contar</li>
-            <li data-t="f1b3">El avance de cada operación, paso por paso</li>
-            <li data-t="f1b4">La pantalla de Hoy te dice qué papel está frenando un cierre</li>
+            <li data-t="f1b1">Marca lo que aplica</li>
+            <li data-t="f1b2">Identifica lo que falta</li>
+            <li data-t="f1b3">Sigue el avance de cada operación paso a paso</li>
             </ul>
           </div>
           <figure class="shot"><img src="shots/b1-expediente.webp" alt="El expediente de una compradora, con el avance de cada documento" data-ta="f1alt" loading="lazy"></figure>
@@ -392,13 +392,12 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
         <article class="feat" style="--hue:#2F7D5E">
           <div class="copy">
             <span class="tag" data-t="f2k">Fichas con IA</span>
-            <h3 data-t="f2h">Sueltas el PDF y la IA llena la ficha</h3>
-            <p data-t="f2p">Ficha técnica, avalúo o lista de precios del desarrollador: la inteligencia artificial lee el documento y llena precio, m², recámaras, entrega y comisión. Tú revisas antes de guardar — nada se guarda solo.</p>
+            <h3 data-t="f2h">Convierte tus PDFs en fichas de propiedades</h3>
+            <p data-t="f2p">Sube una ficha técnica, avalúo o lista de precios del desarrollador y la IA extrae la información para llenar precio, m², recámaras, fecha de entrega, comisión y más.</p>
             <ul>
-            <li data-t="f2b1">Fichas técnicas, avalúos y listas de precios de desarrolladores</li>
-            <li data-t="f2b2">Precio, m², recámaras, entrega y comisión, llenos por ti</li>
-            <li data-t="f2b3">Revisas cada campo antes de guardar</li>
-            <li data-t="f2b4">Incluido en tu plan: 40 o 200 lecturas al mes</li>
+            <li data-t="f2b1">Tú verificas cada dato antes de guardarlo</li>
+            <li data-t="f2b2">Tus fichas personalizadas en minutos</li>
+            <li data-t="f2b3">40 o 200 lecturas de documentos al mes, según tu plan</li>
             </ul>
           </div>
           <figure class="shot"><img src="shots/b2-pdf.webp" alt="Un PDF soltado en el formulario de un inmueble nuevo" data-ta="f2alt" loading="lazy"></figure>
@@ -407,12 +406,12 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
         <article class="feat" style="--hue:#B8921F">
           <div class="copy">
             <span class="tag" data-t="f3k">Coincidencias</span>
-            <h3 data-t="f3h">El inmueble que sí le sirve</h3>
-            <p data-t="f3p">Capturas el brief del comprador — presupuesto, zonas, recámaras, si es inversión o para vivir — y tu inventario se ordena solo, del que más encaja al que menos, con el porqué a la vista.</p>
+            <h3 data-t="f3h">Encuentra las propiedades que realmente le sirven a tu comprador</h3>
+            <p data-t="f3p">Captura su presupuesto, zona de interés, número de recámaras y si busca una propiedad para vivir o invertir. naah ordena tu inventario de acuerdo con qué tan bien encaja cada propiedad con lo que está buscando.</p>
             <ul>
             <li data-t="f3b1">Una calificación de 0 a 100 para cada inmueble</li>
-            <li data-t="f3b2">El porqué a la vista: presupuesto, zona, recámaras, estatus</li>
-            <li data-t="f3b3">Preseleccionas y armas el recorrido desde ahí mismo</li>
+            <li data-t="f3b2">El motivo de la coincidencia siempre visible</li>
+            <li data-t="f3b3">Precisión que te ahorra tiempo y aumenta tu posibilidad de cierre</li>
             </ul>
           </div>
           <figure class="shot"><img src="shots/b3-match.webp" alt="El inventario ordenado contra el brief de un comprador" data-ta="f3alt" loading="lazy"></figure>
@@ -421,12 +420,13 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
         <article class="feat" style="--hue:#B4552F">
           <div class="copy">
             <span class="tag" data-t="f4k">Recorridos</span>
-            <h3 data-t="f4h">Recorridos que se ven profesionales</h3>
-            <p data-t="f4p">Armas la ruta, pones hora y notas en cada parada, y sale un PDF con tu logotipo listo para mandarle al cliente por WhatsApp antes de salir.</p>
+            <h3 data-t="f4h">Recorridos profesionales, listos para compartir</h3>
+            <p data-t="f4p">Organiza tu ruta y añade los detalles importantes. naah genera un PDF con tu logotipo para que puedas compartirlo con tu cliente antes del recorrido.</p>
             <ul>
-            <li data-t="f4b1">Hora y nota en cada parada</li>
-            <li data-t="f4b2">Un PDF con tu logotipo, listo para WhatsApp</li>
-            <li data-t="f4b3">Se arma directo desde las coincidencias del comprador</li>
+            <li data-t="f4b1">Crea el recorrido directamente desde las coincidencias de tu comprador</li>
+            <li data-t="f4b2">Selecciona las propiedades</li>
+            <li data-t="f4b3">Agrega horarios y notas en cada parada</li>
+            <li data-t="f4b4">Comparte un recorrido profesional y personalizado</li>
             </ul>
           </div>
           <figure class="shot"><img src="shots/b4-recorrido.webp" alt="Un recorrido con dos paradas, hora y notas" data-ta="f4alt" loading="lazy"></figure>
@@ -708,8 +708,9 @@ const WHATSAPP = "5219993355302";          // +52 1 999 335 5302
 const EN = {
   nav1: "What it does", nav2: "Pricing", nav3: "Questions", signin: "Sign in",
 
-  h1: "Built for realtors, by realtors.",
-  lede: "The CRM for people who sell houses here: your inventory, your buyers, your viewings and the file a Mexican notary actually asks for — in one place, in your language.",
+  herok: "Built for realtors, by realtors.",
+  h1: "Everything you need to sell property, in one place.",
+  lede: "Manage your inventory, buyers, viewings and paperwork from one CRM, designed for the way property is sold in Yucatán.",
   cta1: "Start free", cta2: "Talk to me on WhatsApp",
   trial1: "14 days free", trial2: "No card",
   trial3: "No sales call", trial4: "Cancel whenever",
@@ -717,39 +718,37 @@ const EN = {
 
   heroalt: "The Today screen: buyers, follow-ups, pipeline and commission",
 
-  k1: "What it does",
-  h2a: "Six things that currently live in WhatsApp and a spreadsheet.",
-  p2a: "None of them is a module nobody opens. They're the six that eat your afternoon.",
+  k1: "What the CRM does",
+  h2a: "naah brings together in one place the tasks that take up most of your time and that you need under control to close your deals.",
 
-  f1h: "The file the notary asks for",
-  f1p: "Escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio. The real list, per person and per property, ticked once — and it serves whether they're buying or selling.",
+  f1h: "The file you need to close a deal",
+  f1p: "Keep every document for each person and property in one place: escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio and more.",
   f1k: "Paperwork",
-  f1b1: "Captured once, and it serves whether they buy or sell",
-  f1b2: "Mark N/A whatever doesn’t apply, and it stops counting",
-  f1b3: "Every deal’s progress, step by step",
-  f1b4: "The Today screen tells you which document is holding up a closing",
+  f1b1: "Mark what applies",
+  f1b2: "See what is missing",
+  f1b3: "Follow each deal’s progress step by step",
   f1alt: "A buyer’s file, with progress on every document",
-  f2h: "Drop the PDF, the AI fills the listing",
-  f2p: "Factsheet, avalúo or a developer's price list: the AI reads the document and fills in price, m², bedrooms, handover and commission. You check it before saving — nothing saves itself.",
+  f2h: "Turn your PDFs into property listings",
+  f2p: "Upload a factsheet, an avalúo or a developer’s price list and the AI pulls out the information to fill in price, m², bedrooms, handover date, commission and more.",
   f2k: "AI listings",
-  f2b1: "Factsheets, avalúos and developers’ price lists",
-  f2b2: "Price, m², bedrooms, handover and commission, filled in for you",
-  f2b3: "You check every field before saving",
-  f2b4: "Included in your plan: 40 or 200 reads a month",
+  f2b1: "You check every detail before it is saved",
+  f2b2: "Your own listings, in minutes",
+  f2b3: "40 or 200 document reads a month, depending on your plan",
   f2alt: "A PDF dropped onto a new-property form",
-  f3h: "The property that actually suits them",
-  f3p: "Enter the buyer's brief — budget, zones, bedrooms, investment or to live in — and your inventory sorts itself, best fit first, with the reasons in plain sight.",
+  f3h: "Find the properties that actually suit your buyer",
+  f3p: "Enter their budget, the zone they want, how many bedrooms and whether they are buying to live in or to invest. naah ranks your inventory by how well each property fits what they are looking for.",
   f3k: "Matching",
   f3b1: "A score from 0 to 100 for every property",
-  f3b2: "The reasons in plain sight: budget, zone, bedrooms, status",
-  f3b3: "Shortlist, and build the viewing route from right there",
+  f3b2: "The reason for the match always in sight",
+  f3b3: "Precision that saves you time and improves your chances of closing",
   f3alt: "Inventory ranked against one buyer’s brief",
-  f4h: "Viewings that look professional",
-  f4p: "Build the route, put a time and a note on each stop, and out comes a PDF with your logo, ready to send the client on WhatsApp before you set off.",
+  f4h: "Professional viewings, ready to share",
+  f4p: "Organise your route and add the details that matter. naah generates a PDF with your logo so you can share it with your client before the viewing.",
   f4k: "Viewings",
-  f4b1: "A time and a note on every stop",
-  f4b2: "A PDF with your logo, ready for WhatsApp",
-  f4b3: "Built straight from the buyer’s matches",
+  f4b1: "Build the route straight from your buyer’s matches",
+  f4b2: "Pick the properties",
+  f4b3: "Add times and notes at each stop",
+  f4b4: "Share a professional, personalised route",
   f4alt: "A viewing route with two stops, times and notes",
   f5h: "Your pipeline and your commission, at a glance",
   f5p: "What's open, what closes this month, which paperwork is holding a deal up, and who you haven't spoken to in a fortnight. One screen, before the first coffee.",
