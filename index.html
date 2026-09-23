@@ -250,11 +250,12 @@ section:not(.sheet) + section:not(.sheet){padding-top:0}
 
 /* --- referral --- */
 .refer{
-  background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--accent);
-  border-radius:var(--radius);padding:32px 30px;
+  background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);
+  border-radius:var(--radius);padding:34px 30px 36px;text-align:center;
 }
-.refer h3{font-size:20px;margin-bottom:8px}
-.refer p{color:var(--muted);font-size:15.5px;max-width:52ch}
+.refer h3{font-size:21px;margin-bottom:10px}
+/* Held to about two lines: wider and the second sentence orphans a word. */
+.refer p{color:var(--muted);font-size:15.5px;max-width:600px;margin:0 auto}
 
 /* --- faq --- */
 .faq{max-width:760px;border-top:1px solid var(--line);margin:0 auto}
@@ -370,7 +371,7 @@ footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
     <div class="wrap">
       <div class="sechead">
         <span class="kicker" data-t="k1">Qué hace el CRM</span>
-        <h2 data-t="h2a">naah reúne en un solo lugar las tareas que más tiempo te quitan y que necesitas tener bajo control para cerrar tus operaciones.</h2>
+        <h2 data-t="h2a">naah reúne en un solo lugar las tareas que más tiempo te quitan.</h2>
       </div>
 
       <div class="feats">
@@ -731,7 +732,7 @@ const EN = {
   heroalt: "The Today screen: buyers, follow-ups, pipeline and commission",
 
   k1: "What the CRM does",
-  h2a: "naah brings together in one place the tasks that take up most of your time and that you need under control to close your deals.",
+  h2a: "naah brings together in one place the tasks that take up most of your time.",
 
   f1h: "The file you need to close a deal",
   f1p: "Keep every document for each person and property in one place: escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio and more.",
