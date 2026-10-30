@@ -1,973 +1,297 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>naah — CRM inmobiliario</title>
-<meta name="description" content="Hecho por asesores, para asesores. Cartera, prospectos, recorridos y el expediente que pide el notario, en un solo lugar. En español y en inglés. 14 días gratis, sin tarjeta.">
-<meta name="theme-color" content="#F7F8FA">
-<link rel="canonical" href="https://www.naah.com.mx/">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="naah">
-<meta property="og:title" content="naah — CRM inmobiliario">
-<meta property="og:description" content="Hecho por asesores, para asesores. Tu cartera, tus prospectos y tu papeleo en un solo lugar.">
-<meta property="og:url" content="https://www.naah.com.mx/">
-<meta property="og:image" content="https://www.naah.com.mx/naah-share.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="naah, CRM inmobiliario: hecho por asesores, para asesores.">
-<meta property="og:locale" content="es_MX">
-<meta property="og:locale:alternate" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.naah.com.mx/naah-share.jpg">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horizon — AI made simple for your business</title>
+<meta name="description" content="Horizon helps businesses put AI to work and launch new products in weeks, at a fraction of the usual cost. Based in Mérida, working across Mexico and LATAM.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238B7CF6' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M3 15h18'/%3E%3Cpath d='M6 15a6 6 0 0 1 12 0'/%3E%3Cpath d='M7 19h10'/%3E%3C/svg%3E">
+<link rel="alternate" hreflang="es" href="https://www.horizontech.com.mx/es/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap">
-
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232C5282'/><g transform='translate(50 50) scale(0.74) translate(-50 -50)'><path d='M16 84V52a34 34 0 0 1 68 0v32H64V52a14 14 0 0 0-28 0v32Z' fill='%23FFFDF8'/></g></svg>">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600;700&amp;display=swap">
 <style>
-/* ============================================================
-   naah — Harbour. Cool greys, one blue, and colour kept back for
-   the six things the product actually does.
-
-   Light only, on purpose: this page is read once, in daylight,
-   usually on a phone between viewings.
-   ============================================================ */
-:root{
-  color-scheme: light;
-  --ground:#F7F8FA;
-  --paper:#FFFFFF;
-  --ink:#1B2430;
-  --ink-2:#44515F;
-  --muted:#77838F;
-  --line:#D8DEE7;
-  --line-soft:#EAEEF3;
-  --accent:#2C5282;
-  --accent-deep:#23436B;
-  --accent-on:#FFFFFF;
-  --wash:#E7EEF6;
-  --good:#2F7D5E;
-  --shadow:0 1px 2px rgba(27,36,48,.04), 0 10px 26px -18px rgba(27,36,48,.35);
-  --radius:9px;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0; background:var(--ground); color:var(--ink);
-  font:400 17px/1.62 "Space Grotesk", system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
-h1,h2,h3{margin:0;line-height:1.13;letter-spacing:-.035em;font-weight:700}
-p{margin:0}
-a{color:inherit}
-code{font-family:"Space Mono",ui-monospace,monospace;font-size:.9em}
-
-/* --- top bar --- */
-header{
-  position:sticky;top:0;z-index:50;
-  background:color-mix(in srgb, var(--ground) 88%, transparent);
-  backdrop-filter:saturate(140%) blur(12px);
-  border-bottom:1px solid transparent;transition:border-color .2s;
-}
-header.scrolled{border-bottom-color:var(--line)}
-.bar{display:flex;align-items:center;gap:16px;height:66px}
-.mark{text-decoration:none;font-weight:700;font-size:23px;letter-spacing:-.05em}
-.bar nav{margin-left:auto;display:flex;align-items:center;gap:22px}
-.bar nav a.navlink{color:var(--muted);text-decoration:none;font-size:14.5px}
-.bar nav a.navlink:hover{color:var(--ink)}
-@media (max-width:780px){ .bar nav a.navlink{display:none} }
-
-.langtog{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper)}
-.langtog button{
-  border:0;background:transparent;color:var(--muted);cursor:pointer;
-  font:400 12px/1 "Space Mono",monospace;padding:7px 10px;letter-spacing:.06em;
-}
-.langtog button[aria-pressed="true"]{background:var(--accent);color:var(--accent-on)}
-
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  border-radius:7px;text-decoration:none;cursor:pointer;border:1px solid transparent;
-  font:500 15px/1 "Space Grotesk",sans-serif;padding:13px 19px;white-space:nowrap;
-  transition:transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
-}
-.btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--accent);color:var(--accent-on)}
-.btn-primary:hover{background:var(--accent-deep);box-shadow:var(--shadow)}
-.btn-ghost{background:var(--paper);color:var(--ink);border-color:var(--line)}
-.btn-ghost:hover{border-color:var(--accent)}
-.btn-sm{padding:9px 14px;font-size:14px}
-.btn svg{width:17px;height:17px;flex:none}
-
-/* --- hero --- */
-.hero{padding:72px 0 0;max-width:900px}
-.hero h1{font-size:clamp(33px,4.9vw,53px)}
-.hero .lede{margin-top:20px;font-size:clamp(17px,2.1vw,20px);color:var(--muted);max-width:60ch}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-
-/* The trial is the whole offer, so it gets its own box rather than a
-   footnote in grey. */
-.trial{
-  margin-top:22px;display:inline-flex;align-items:center;gap:11px;flex-wrap:wrap;
-  background:var(--wash);border:1px solid var(--accent);
-  border-radius:8px;padding:12px 16px;
-}
-.trial b{font-size:16px}
-.trial span{color:var(--ink-2);font-size:14.5px}
-.trial .dot{color:var(--accent)}
-
-/* --- one still screen under the hero --- */
-.reel{margin:54px 0 86px}
-.reel .frame{
-  border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);
-  box-shadow:var(--shadow);overflow:hidden;
-}
-.reel .frame img{display:block;width:100%;height:auto}
-
-/* --- sections --- */
-/* The header is sticky, so an anchor jump has to stop short of it or
-   the heading it jumped to ends up underneath. */
-section[id], #top{scroll-margin-top:84px}
-section{padding:86px 0}
-/* Sections alternate between the grey ground and white sheets with a
-   faint rule top and bottom, so the page reads as chapters rather
-   than one long scroll. Two grey sections in a row share their gap. */
-section:not(.sheet) + section:not(.sheet){padding-top:0}
-.sheet{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.sechead{max-width:640px;margin-bottom:40px}
-.sechead.mid{margin-left:auto;margin-right:auto;text-align:center}
-.sechead h2{font-size:clamp(26px,3.6vw,35px)}
-.sechead p{margin-top:14px;color:var(--muted);font-size:17px}
-.kicker.plain{text-transform:none;letter-spacing:.02em;font-size:13.5px;color:var(--muted)}
-.kicker{
-  font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:15px;
-}
-
-/* --- the six things, one row each, screen alternating sides ---
-   Each keeps its own hue, but only on the label, the ticks and a
-   faint wash behind its screen. */
-.feats{display:grid;gap:104px}
-.feat{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:60px;align-items:center}
-.feat:nth-child(even) .copy{order:2}
-.feat .tag{
-  font:400 11px/1 "Space Mono",ui-monospace,monospace;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--hue);display:block;margin-bottom:14px;
-}
-.feat h3{font-size:clamp(23px,2.7vw,29px);margin-bottom:14px}
-.feat p{color:var(--muted);font-size:16.5px}
-.feat ul{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:11px}
-.feat li{position:relative;padding-left:26px;font-size:15.5px;color:var(--ink-2);line-height:1.5}
-.feat li::before{
-  content:"";position:absolute;left:1px;top:6px;width:11px;height:5.5px;
-  border-left:1.8px solid var(--hue);border-bottom:1.8px solid var(--hue);
-  transform:rotate(-45deg);
-}
-/* The screens are tall crops of the app; the frame shows the top of
-   each, which is where the point of it sits. */
-.feat .shot{
-  margin:0;height:440px;overflow:hidden;
-  padding:30px 30px 0;border-radius:var(--radius);border:1px solid var(--line);
-  background:color-mix(in srgb, var(--hue) 7%, var(--paper));
-}
-.feat .shot img{
-  display:block;width:100%;height:100%;object-fit:cover;object-position:left top;
-  border:1px solid var(--line);border-bottom:0;border-radius:7px 7px 0 0;
-  box-shadow:var(--shadow);background:var(--paper);
-}
-/* A screen that is wider than tall is shown whole, and the frame
-   follows its height instead of cropping it. */
-.feat .shot.fit{height:auto}
-.feat .shot.fit img{height:auto;object-fit:initial}
-@media (max-width:820px){
-  .feats{gap:72px}
-  .feat{grid-template-columns:1fr;gap:28px}
-  .feat:nth-child(even) .copy{order:0}
-  .feat .shot{height:340px;padding:20px 20px 0}
-}
-
-/* --- about --- */
-.about{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:64px;align-items:start}
-.about .sechead{margin-bottom:0}
-.about .story{margin-top:18px;color:var(--ink-2);font-size:17px;display:grid;gap:16px;max-width:58ch}
-.about .facts{display:grid;gap:0;border-top:1px solid var(--line)}
-.about .fact{padding:20px 0;border-bottom:1px solid var(--line)}
-.about .fact h3{font-size:17px;margin-bottom:6px}
-.about .fact p{color:var(--muted);font-size:15px}
-@media (max-width:820px){ .about{grid-template-columns:1fr;gap:36px} }
-
-/* --- why naah: six short reasons on a hairline grid --- */
-.whys{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:1px solid var(--line);border-left:1px solid var(--line);
-}
-.why{padding:28px 26px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.why svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.7;
-  stroke-linecap:round;stroke-linejoin:round;display:block;margin-bottom:16px}
-.why h3{font-size:17px;margin-bottom:7px}
-.why p{color:var(--muted);font-size:15px}
-@media (max-width:920px){ .whys{grid-template-columns:repeat(2,1fr)} }
-@media (max-width:600px){ .whys{grid-template-columns:1fr} }
-
-/* --- steps --- */
-.steps{display:grid;gap:28px;grid-template-columns:repeat(3,1fr);counter-reset:s}
-@media (max-width:780px){ .steps{grid-template-columns:1fr;gap:22px} }
-.step{padding-top:20px;border-top:2px solid var(--accent);counter-increment:s}
-.step::before{
-  content:counter(s,decimal-leading-zero);display:block;margin-bottom:12px;
-  font:400 11.5px/1 "Space Mono",ui-monospace,monospace;color:var(--muted);letter-spacing:.12em;
-}
-.step h3{font-size:17px;margin-bottom:8px}
-.step p{color:var(--muted);font-size:15px}
-
-/* --- pricing, centred --- */
-.plans{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px;margin:0 auto}
-@media (max-width:700px){ .plans{grid-template-columns:1fr} }
-.plan{
-  background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
-  padding:28px 26px;display:flex;flex-direction:column;text-align:center;
-}
-.plan.featured{border-color:var(--accent);box-shadow:var(--shadow)}
-.plan .pname{font-weight:700;font-size:17px}
-.plan .pwho{color:var(--muted);font-size:14px;margin-top:4px;min-height:44px}
-.plan .price{margin:18px 0 2px;font-size:38px;font-weight:700;letter-spacing:-.045em}
-.plan .price span{font-size:15px;font-weight:400;color:var(--muted);letter-spacing:0}
-.plan .iva{font-size:13.5px;color:var(--muted);font-family:"Space Mono",monospace}
-.plan ul{list-style:none;margin:20px 0 24px;padding:0;display:grid;gap:10px;text-align:left}
-.plan li{position:relative;padding-left:24px;font-size:15px;color:var(--muted)}
-.plan li::before{
-  content:"";position:absolute;left:0;top:7px;width:12px;height:6px;
-  border-left:1.8px solid var(--good);border-bottom:1.8px solid var(--good);
-  transform:rotate(-45deg);
-}
-.plan .btn{margin-top:auto}
-.pricenote{margin:24px auto 0;font-size:14.5px;color:var(--muted);max-width:62ch;text-align:center}
-
-/* --- referral --- */
-.refer{
-  background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);
-  border-radius:var(--radius);padding:34px 30px 36px;text-align:center;
-}
-.refer h3{font-size:21px;margin-bottom:10px}
-/* Held to about two lines: wider and the second sentence orphans a word. */
-.refer p{color:var(--muted);font-size:15.5px;max-width:600px;margin:0 auto}
-
-/* --- faq --- */
-.faq{max-width:760px;border-top:1px solid var(--line);margin:0 auto}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{
-  cursor:pointer;list-style:none;padding:20px 0;font-weight:500;font-size:16.5px;
-  display:flex;align-items:center;gap:14px;
-}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{
-  content:"";margin-left:auto;width:9px;height:9px;flex:none;
-  border-right:1.7px solid var(--muted);border-bottom:1.7px solid var(--muted);
-  transform:rotate(45deg) translateY(-3px);transition:transform .18s ease;
-}
-.faq details[open] summary::after{transform:rotate(225deg) translateY(-2px)}
-.faq .ans{padding:0 0 22px;color:var(--muted);font-size:15.5px;max-width:64ch}
-
-/* --- closing band --- */
-.band{
-  background:var(--ink);color:#F7F8FA;border-radius:var(--radius);
-  padding:54px 44px;text-align:center;
-}
-.band h2{font-size:clamp(25px,3.4vw,33px)}
-.band p{margin-top:14px;color:rgba(247,248,250,.7);font-size:17px}
-.band .cta{justify-content:center}
-.band .btn-primary{background:#F7F8FA;color:var(--ink)}
-.band .btn-primary:hover{background:#fff}
-.band .btn-ghost{background:transparent;color:#F7F8FA;border-color:rgba(247,248,250,.34)}
-.band .btn-ghost:hover{border-color:#F7F8FA}
-.band .trial{
-  background:rgba(247,248,250,.1);border-color:rgba(247,248,250,.35);
-  color:#F7F8FA;margin-top:24px;
-}
-.band .trial span{color:rgba(247,248,250,.72)}
-.band .trial .dot{color:rgba(247,248,250,.55)}
-
-/* --- footer --- */
-footer{margin-top:86px;border-top:1px solid var(--line);padding:32px 0 56px}
-.foot{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;font-size:14px;color:var(--muted)}
-.foot a{text-decoration:none}
-.foot a:hover{color:var(--ink)}
-.foot .spacer{margin-left:auto}
-
-.wafloat{
-  position:fixed;right:20px;bottom:20px;z-index:60;
-  width:50px;height:50px;border-radius:50%;display:grid;place-items:center;
-  background:var(--accent);color:#fff;box-shadow:var(--shadow);
-  text-decoration:none;transition:transform .14s ease;
-}
-.wafloat:hover{transform:scale(1.06)}
-.wafloat svg{width:24px;height:24px;fill:currentColor}
-@media (max-width:640px){ .wafloat{right:14px;bottom:14px} }
-
-@media (prefers-reduced-motion: reduce){
-  *{transition:none !important;animation:none !important}
-  html{scroll-behavior:auto}
-}
+body{margin:0;background:#0A0A0F}
+a{color:#C9C2FF}a:hover{color:#FFFFFF}
+details summary{list-style:none;cursor:pointer}
+details summary::-webkit-details-marker{display:none}
+details[open] .faq-plus{transform:rotate(45deg)}
+.faq-plus{transition:transform .2s ease}
 </style>
+<style>html{scroll-behavior:smooth}</style>
 </head>
-
 <body>
+<div style="background: #0A0A0F; color: #F4F3FA; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6; min-height: 100vh">
 
-<header id="top">
-  <div class="wrap bar">
-    <a class="mark" href="#top">naah</a>
-    <nav>
-      <a class="navlink" href="#que-hace" data-t="nav1">Qué hace</a>
-      <a class="navlink" href="#nosotros" data-t="nav4">Nosotros</a>
-      <a class="navlink" href="#precios" data-t="nav2">Precios</a>
-      <a class="navlink" href="#preguntas" data-t="nav3">Preguntas</a>
-      <div class="langtog" role="group" aria-label="Idioma / Language">
-        <button type="button" data-lang="es" aria-pressed="true">ES</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  <!-- NAV -->
+  <header style="border-bottom: 1px solid #1E1E2C">
+    <nav aria-label="Main" style="max-width: 1120px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #F4F3FA; font-family: 'Inter Tight', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8B7CF6" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 15h18"></path><path d="M6 15a6 6 0 0 1 12 0"></path><path d="M7 19h10"></path></svg>
+        Horizon
+      </a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 28px; font-size: 15px">
+        <a href="#how" style="color: #B7B5CA; text-decoration: none">How it works</a>
+        <a href="#build" style="color: #B7B5CA; text-decoration: none">What we build</a>
+        <a href="#packages" style="color: #B7B5CA; text-decoration: none">Packages</a>
+        <a href="#faq" style="color: #B7B5CA; text-decoration: none">FAQ</a>
+        <a href="/es/" lang="es" style="color: #B7B5CA; text-decoration: none" aria-label="Ver en español">ES</a>
+        <a href="#contact" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 999px; background: #8B7CF6; color: #0A0A0F; font-weight: 600; text-decoration: none">Book a free call</a>
       </div>
-      <a class="btn btn-ghost btn-sm js-app" href="#" data-t="signin">Entrar</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-
-  <div class="wrap">
-    <div class="hero">
-      <span class="kicker plain" data-t="herok">Hecho por asesores, para asesores.</span>
-      <h1 data-t="h1">Todo lo que necesitas para vender propiedades, en un solo lugar.</h1>
-      <p class="lede" data-t="lede">Gestiona tu cartera, prospectos, recorridos y expedientes desde un solo CRM, diseñado para la forma en que se vende en el sector inmobiliario de Yucatán.</p>
-      <div class="cta">
-        <a class="btn btn-primary js-app" href="#" data-t="cta1">Empieza gratis</a>
-        <a class="btn btn-ghost js-wa" href="#" data-t="cta2">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.4z"/><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
-          Habla conmigo por WhatsApp</a>
-      </div>
-      <p class="trial">
-        <b data-t="trial1">14 días gratis</b>
-        <span class="dot">·</span>
-        <span data-t="trial2">Sin tarjeta</span>
-        <span class="dot">·</span>
-        <span data-t="trial3">Sin llamada de ventas</span>
-        <span class="dot">·</span>
-        <span data-t="trial4">Cancela cuando quieras</span>
-      </p>
+  <!-- HERO -->
+  <section id="top" style="max-width: 1120px; margin: 0 auto; padding: 120px 24px 104px">
+    <p style="margin: 0 0 20px; font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8B7CF6">Agentic AI, made simple</p>
+    <h1 style="margin: 0; max-width: 860px; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: clamp(40px, 6vw, 72px); line-height: 1.04; letter-spacing: -0.03em">Put AI to work in your business — no jargon required.</h1>
+    <p style="margin: 28px 0 0; max-width: 620px; font-size: 20px; color: #B7B5CA">We help companies figure out where AI actually helps, then build it for them. Need a new app or tool? We use AI to deliver it in weeks, at a fraction of the usual cost.</p>
+    <div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 14px">
+      <a href="#contact" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #8B7CF6; color: #0A0A0F; font-weight: 600; text-decoration: none">Book a free 30-min call</a>
+      <a href="#how" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; border: 1px solid #34344A; color: #F4F3FA; font-weight: 500; text-decoration: none">See how it works</a>
     </div>
+    <p style="margin: 28px 0 0; font-size: 14px; color: #8E8CA3">No technical knowledge needed · Fixed prices · Based in Mérida, working across Mexico &amp; LATAM</p>
+  </section>
 
-    <div class="reel">
-      <div class="frame">
-        <img src="shots/hoy.webp" width="1680" height="1003" alt="La pantalla de Hoy: prospectos, pendientes, pipeline y comisión" data-ta="heroalt">
+  <!-- SOUND FAMILIAR -->
+  <section style="border-top: 1px solid #1E1E2C">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px">
+      <h2 style="margin: 0 0 48px; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -0.02em">Sound familiar?</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+        <div style="padding: 32px; border: 1px solid #1E1E2C; border-radius: 16px; background: #111118">
+          <p style="margin: 0 0 16px; font-family: 'Inter Tight', sans-serif; font-size: 21px; font-weight: 600; line-height: 1.3">“Everyone talks about AI, but I don’t know where to start.”</p>
+          <p style="margin: 0; color: #B7B5CA">We look at how your business runs today and show you, in plain language, the two or three places AI will save real time or money.</p>
+        </div>
+        <div style="padding: 32px; border: 1px solid #1E1E2C; border-radius: 16px; background: #111118">
+          <p style="margin: 0 0 16px; font-family: 'Inter Tight', sans-serif; font-size: 21px; font-weight: 600; line-height: 1.3">“I have a product idea, but a dev team costs too much.”</p>
+          <p style="margin: 0; color: #B7B5CA">AI-assisted development lets a small, senior team build what used to need a large one. You get a working product fast, without the big-agency bill.</p>
+        </div>
+        <div style="padding: 32px; border: 1px solid #1E1E2C; border-radius: 16px; background: #111118">
+          <p style="margin: 0 0 16px; font-family: 'Inter Tight', sans-serif; font-size: 21px; font-weight: 600; line-height: 1.3">“My team loses hours to repetitive work.”</p>
+          <p style="margin: 0; color: #B7B5CA">We build AI assistants that handle the routine — answering enquiries, processing documents, updating systems — so your people can focus on the work that matters.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-
-  <section id="que-hace" class="sheet">
-    <div class="wrap">
-      <div class="sechead">
-        <span class="kicker" data-t="k1">Qué hace el CRM</span>
-        <h2 data-t="h2a">naah reúne en un solo lugar las tareas que más tiempo te quitan.</h2>
-      </div>
-
-      <div class="feats">
-
-        <article class="feat" style="--hue:#2C5282">
-          <div class="copy">
-            <span class="tag" data-t="f1k">Expediente</span>
-            <h3 data-t="f1h">El expediente que necesitas para cerrar una operación</h3>
-            <p data-t="f1p">Ten toda la documentación de cada persona e inmueble en un solo lugar: escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio y más.</p>
-            <ul>
-            <li data-t="f1b1">Marca lo que aplica</li>
-            <li data-t="f1b2">Identifica lo que falta</li>
-            <li data-t="f1b3">Sigue el avance de cada operación paso a paso</li>
-            </ul>
+  <!-- TWO PATHS -->
+  <section id="build" style="border-top: 1px solid #1E1E2C">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px">
+      <h2 style="margin: 0 0 12px; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -0.02em">Two ways we help</h2>
+      <p style="margin: 0 0 48px; max-width: 560px; color: #B7B5CA">Most clients come to us for one of these. Not sure which is you? That’s what the free call is for.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px">
+        <div style="padding: 40px; border: 1px solid #1E1E2C; border-radius: 20px; background: #111118; display: flex; flex-direction: column; gap: 20px">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B7CF6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"></path></svg>
+          <h3 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.01em">Bring AI into your company</h3>
+          <p style="margin: 0; color: #B7B5CA">AI agents that work inside the tools you already use and take real tasks off your team’s plate.</p>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 16px">
+            <p style="margin: 0; display: flex; gap: 12px"><span style="color: #8B7CF6" aria-hidden="true">—</span>A WhatsApp assistant that answers customers 24/7</p>
+            <p style="margin: 0; display: flex; gap: 12px"><span style="color: #8B7CF6" aria-hidden="true">—</span>Invoices and documents read and filed automatically</p>
+            <p style="margin: 0; display: flex; gap: 12px"><span style="color: #8B7CF6" aria-hidden="true">—</span>Weekly reports written for you from your own data</p>
+            <p style="margin: 0; display: flex; gap: 12px"><span style="color: #8B7CF6" aria-hidden="true">—</span>Training so your team can use AI confidently</p>
           </div>
-          <figure class="shot"><img src="shots/b1-expediente.webp" alt="El expediente de una compradora, con el avance de cada documento" data-ta="f1alt" loading="lazy"></figure>
-        </article>
-
-        <article class="feat" style="--hue:#2F7D5E">
-          <div class="copy">
-            <span class="tag" data-t="f2k">Fichas con IA</span>
-            <h3 data-t="f2h">Convierte tus PDFs en fichas de propiedades</h3>
-            <p data-t="f2p">Sube una ficha técnica, avalúo o lista de precios del desarrollador y la IA extrae la información para llenar precio, m², recámaras, fecha de entrega, comisión y más.</p>
-            <ul>
-            <li data-t="f2b1">Tú verificas cada dato antes de guardarlo</li>
-            <li data-t="f2b2">Tus fichas personalizadas en minutos</li>
-            <li data-t="f2b3">40 o 200 lecturas de documentos al mes, según tu plan</li>
-            </ul>
+        </div>
+        <div style="padding: 40px; border: 1px solid #1E1E2C; border-radius: 20px; background: #111118; display: flex; flex-direction: column; gap: 20px">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B7CF6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c2-6 6-12 14-14-2 8-8 12-14 14z"></path><path d="M9 15l-3-3"></path><path d="M5 19l-1 1"></path></svg>
+          <h3 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 26px; letter-spacing: -0.01em">Launch a product, fast</h3>
+          <p style="margin: 0; color: #B7B5CA">From idea to a working app your customers can use — built with AI tools like Claude, led by experienced product people.</p>
+          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 16px">
+            <p style="margin: 0; display: flex; gap: 12px"><span style="color: #8B7CF6" aria-hidden="true">—</span>A first version (MVP) to test with real customers</p>
+            <p style="margin: 0; display: flex; gap: 12px"><span style="color: #8B7CF6" aria-hidden="true">—</span>Internal tools, portals and dashboards</p>
+            <p style="margin: 0; display: flex; gap: 12px"><span style="color: #8B7CF6" aria-hidden="true">—</span>Websites and booking or ordering systems</p>
+            <p style="margin: 0; display: flex; gap: 12px"><span style="color: #8B7CF6" aria-hidden="true">—</span>Ongoing improvements once you’re live</p>
           </div>
-          <figure class="shot"><img src="shots/b2-pdf.webp" alt="Un PDF soltado en el formulario de un inmueble nuevo" data-ta="f2alt" loading="lazy"></figure>
-        </article>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <article class="feat" style="--hue:#B8921F">
-          <div class="copy">
-            <span class="tag" data-t="f3k">Coincidencias</span>
-            <h3 data-t="f3h">Encuentra las propiedades que realmente le sirven a tu comprador</h3>
-            <p data-t="f3p">Captura su presupuesto, zona de interés, número de recámaras y si busca una propiedad para vivir o invertir. naah ordena tu inventario de acuerdo con qué tan bien encaja cada propiedad con lo que está buscando.</p>
-            <ul>
-            <li data-t="f3b1">Una calificación de 0 a 100 para cada inmueble</li>
-            <li data-t="f3b2">El motivo de la coincidencia siempre visible</li>
-            <li data-t="f3b3">Precisión que te ahorra tiempo y aumenta tu posibilidad de cierre</li>
-            </ul>
+  <!-- HOW IT WORKS -->
+  <section id="how" style="background: linear-gradient(180deg, #0A0A0F 0%, #1E1946 22%, #241D5C 100%); color: #F4F3FA">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 128px 24px 112px">
+      <h2 style="margin: 0 0 12px; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -0.02em; color: #FFFFFF">How it works</h2>
+      <p style="margin: 0 0 56px; max-width: 560px; color: #C9C4EA">Four simple steps. You always know what’s happening, what it costs and what comes next.</p>
+      <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
+        <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 16px; background: #2C2470; border: 1px solid #3E3590">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; background: #3E3590; font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 600; color: #E2DDFF">01</span>
+          <h3 style="margin: 4px 0 0; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 21px; color: #FFFFFF">Free call</h3>
+          <p style="margin: 0; color: #C9C4EA; font-size: 16px">30 minutes to understand your business and your goals. No pressure, no tech talk.</p>
+        </li>
+        <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 16px; background: #2C2470; border: 1px solid #3E3590">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; background: #3E3590; font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 600; color: #E2DDFF">02</span>
+          <h3 style="margin: 4px 0 0; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 21px; color: #FFFFFF">A clear plan</h3>
+          <p style="margin: 0; color: #C9C4EA; font-size: 16px">A short proposal: what we’ll build, how long it takes and one fixed price.</p>
+        </li>
+        <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 16px; background: #2C2470; border: 1px solid #3E3590">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; background: #3E3590; font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 600; color: #E2DDFF">03</span>
+          <h3 style="margin: 4px 0 0; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 21px; color: #FFFFFF">We build, you see it</h3>
+          <p style="margin: 0; color: #C9C4EA; font-size: 16px">Weekly demos so you can see progress and steer as we go.</p>
+        </li>
+        <li style="display: flex; flex-direction: column; gap: 12px; padding: 28px; border-radius: 16px; background: #2C2470; border: 1px solid #3E3590">
+          <span style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 999px; background: #3E3590; font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 600; color: #E2DDFF">04</span>
+          <h3 style="margin: 4px 0 0; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 21px; color: #FFFFFF">Launch &amp; support</h3>
+          <p style="margin: 0; color: #C9C4EA; font-size: 16px">We go live together, train your team and stay on hand as you grow.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- WHY FASTER -->
+  <section style="background: linear-gradient(180deg, #241D5C 0%, #0A0A0F 70%)">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 112px 24px 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+      <div style="flex: 1 1 380px; min-width: 0">
+        <h2 style="margin: 0 0 20px; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -0.02em; line-height: 1.15">Why we’re faster and more affordable</h2>
+        <p style="margin: 0 0 16px; color: #B7B5CA">We build with the latest AI tools, like Claude, which handle much of the heavy lifting a large team used to do.</p>
+        <p style="margin: 0; color: #B7B5CA">Experienced people still lead every decision — product, design and quality — so you get speed without cutting corners.</p>
+      </div>
+      <div style="flex: 1 1 420px; min-width: 0; border: 1px solid #1E1E2C; border-radius: 20px; overflow: hidden">
+        <div style="display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); font-size: 15px">
+          <div style="padding: 18px 24px; border-bottom: 1px solid #1E1E2C; color: #8E8CA3"></div>
+          <div style="padding: 18px 24px; border-bottom: 1px solid #1E1E2C; color: #8E8CA3">Traditional agency</div>
+          <div style="padding: 18px 24px; border-bottom: 1px solid #1E1E2C; background: #15141F; color: #8B7CF6; font-weight: 600">Horizon</div>
+          <div style="padding: 18px 24px; border-bottom: 1px solid #1E1E2C">Time to first version</div>
+          <div style="padding: 18px 24px; border-bottom: 1px solid #1E1E2C; color: #B7B5CA">2–4 months</div>
+          <div style="padding: 18px 24px; border-bottom: 1px solid #1E1E2C; background: #15141F; font-weight: 600">3–6 weeks</div>
+          <div style="padding: 18px 24px; border-bottom: 1px solid #1E1E2C">Typical cost</div>
+          <div style="padding: 18px 24px; border-bottom: 1px solid #1E1E2C; color: #B7B5CA">$20,000+ USD</div>
+          <div style="padding: 18px 24px; border-bottom: 1px solid #1E1E2C; background: #15141F; font-weight: 600">From $7,500 USD + IVA</div>
+          <div style="padding: 18px 24px">Pricing</div>
+          <div style="padding: 18px 24px; color: #B7B5CA">Hourly, open-ended</div>
+          <div style="padding: 18px 24px; background: #15141F; font-weight: 600">Fixed, agreed upfront</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" style="border-top: 1px solid #1E1E2C">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 96px 24px">
+      <h2 style="margin: 0 0 12px; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -0.02em">Simple packages</h2>
+      <p style="margin: 0 0 48px; max-width: 560px; color: #B7B5CA">Start small and grow. Every package has a fixed price agreed before we begin.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+        <div style="padding: 36px; border: 1px solid #1E1E2C; border-radius: 20px; background: #111118; display: flex; flex-direction: column; gap: 16px">
+          <h3 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 24px">Launch</h3>
+          <p style="margin: 0; color: #B7B5CA; font-size: 16px">Best if you’re just getting started with AI.</p>
+          <p style="margin: 8px 0; font-family: 'Inter Tight', sans-serif; font-size: 36px; font-weight: 600; letter-spacing: -0.02em"><span style="font-size: 15px; font-weight: 400; color: #8E8CA3">From</span> $1,500 <span style="font-size: 15px; font-weight: 400; color: #8E8CA3">USD + IVA</span></p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #D6D4E4">
+            <p style="margin: 0">AI opportunity review</p>
+            <p style="margin: 0">One quick-win automation</p>
+            <p style="margin: 0">Team intro session</p>
           </div>
-          <figure class="shot"><img src="shots/b3-match.webp" alt="El inventario ordenado contra el brief de un comprador" data-ta="f3alt" loading="lazy"></figure>
-        </article>
-
-        <article class="feat" style="--hue:#B4552F">
-          <div class="copy">
-            <span class="tag" data-t="f4k">Recorridos</span>
-            <h3 data-t="f4h">Recorridos profesionales, listos para compartir</h3>
-            <p data-t="f4p">Organiza tu ruta y añade los detalles importantes. naah genera un PDF con tu logotipo para que puedas compartirlo con tu cliente antes del recorrido.</p>
-            <ul>
-            <li data-t="f4b1">Crea el recorrido directamente desde las coincidencias de tu comprador</li>
-            <li data-t="f4b2">Selecciona las propiedades</li>
-            <li data-t="f4b3">Agrega horarios y notas en cada parada</li>
-            <li data-t="f4b4">Comparte un recorrido profesional y personalizado</li>
-            </ul>
+          <a href="#contact" style="margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 48px; border-radius: 999px; border: 1px solid #34344A; color: #F4F3FA; font-weight: 500; text-decoration: none">Start with Launch</a>
+        </div>
+        <div style="padding: 36px; border: 1px solid #8B7CF6; border-radius: 20px; background: #14131D; display: flex; flex-direction: column; gap: 16px">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 24px">Build</h3>
+            <span style="font-size: 13px; font-weight: 500; padding: 4px 12px; border-radius: 999px; background: #221F38; color: #C9C2FF">Most popular</span>
           </div>
-          <figure class="shot"><img src="shots/b4-recorrido.webp" alt="Un recorrido con dos paradas, hora y notas" data-ta="f4alt" loading="lazy"></figure>
-        </article>
-
-        <article class="feat" style="--hue:#7A5391">
-          <div class="copy">
-            <span class="tag" data-t="f5k">Seguimiento</span>
-            <h3 data-t="f5h">Todo lo que necesitas saber, de un vistazo</h3>
-            <p data-t="f5p">Identifica qué necesita atención, qué está frenando un cierre y a quién necesitas contactar.</p>
-            <ul>
-            <li data-t="f5b1">Da seguimiento fácil a tu pipeline</li>
-            <li data-t="f5b2">Verifica el estado de tus operaciones</li>
-            <li data-t="f5b3">Consulta tu comisión por mes</li>
-            <li data-t="f5b4">Identifica a los clientes que llevan 14 días o más sin contacto</li>
-            <li data-t="f5b5">Ten tus siguientes acciones claras y con fecha de vencimiento</li>
-            </ul>
+          <p style="margin: 0; color: #B7B5CA; font-size: 16px">Best for launching a new product or AI agent.</p>
+          <p style="margin: 8px 0; font-family: 'Inter Tight', sans-serif; font-size: 36px; font-weight: 600; letter-spacing: -0.02em"><span style="font-size: 15px; font-weight: 400; color: #8E8CA3">From</span> $7,500 <span style="font-size: 15px; font-weight: 400; color: #8E8CA3">USD + IVA</span></p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #D6D4E4">
+            <p style="margin: 0">A working MVP or AI agent</p>
+            <p style="margin: 0">Weekly demos and feedback</p>
+            <p style="margin: 0">Launch support</p>
           </div>
-          <figure class="shot"><img src="shots/b5-comision.webp" alt="La pantalla de Hoy: pipeline, papeleo y comisión" data-ta="f5alt" loading="lazy"></figure>
-        </article>
-
-        <article class="feat" style="--hue:#4E9A8F">
-          <div class="copy">
-            <span class="tag" data-t="f6k">Bilingüe</span>
-            <h3 data-t="f6h">Un CRM que habla tu idioma</h3>
-            <p data-t="f6p">Trabaja en inglés o español sin duplicar información ni crear procesos separados. Cada persona puede elegir su idioma y todos trabajan con los mismos registros.</p>
-            <ul>
-            <li data-t="f6b1">Español por defecto, inglés con un clic</li>
-            <li data-t="f6b2">Cada persona elige su idioma</li>
-            <li data-t="f6b3">Compradores extranjeros y vendedores locales en un mismo sistema</li>
-            </ul>
+          <a href="#contact" style="margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 48px; border-radius: 999px; background: #8B7CF6; color: #0A0A0F; font-weight: 600; text-decoration: none">Start with Build</a>
+        </div>
+        <div style="padding: 36px; border: 1px solid #1E1E2C; border-radius: 20px; background: #111118; display: flex; flex-direction: column; gap: 16px">
+          <h3 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 24px">Scale</h3>
+          <p style="margin: 0; color: #B7B5CA; font-size: 16px">Best for ongoing AI across your company.</p>
+          <p style="margin: 8px 0; font-family: 'Inter Tight', sans-serif; font-size: 36px; font-weight: 600; letter-spacing: -0.02em"><span style="font-size: 15px; font-weight: 400; color: #8E8CA3">From</span> $2,500 <span style="font-size: 15px; font-weight: 400; color: #8E8CA3">USD / month + IVA</span></p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #D6D4E4">
+            <p style="margin: 0">A dedicated AI product lead</p>
+            <p style="margin: 0">Multiple agents and integrations</p>
+            <p style="margin: 0">Continuous improvements</p>
           </div>
-          <figure class="shot fit"><img src="shots/b6-idioma.webp" alt="Ajustes: cada persona elige su idioma" data-ta="f6alt" loading="lazy"></figure>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-
-  <section>
-    <div class="wrap">
-      <div class="sechead">
-        <span class="kicker" data-t="k2">Cómo se empieza</span>
-        <h2 data-t="h2b">Una tarde, no un proyecto.</h2>
-        <p data-t="p2b">Empieza a trabajar con naah en tres pasos. Sin configuraciones complicadas y usando la información que ya tienes.</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <h3 data-t="s1h">Crea tu cuenta</h3>
-          <p data-t="s1p">Regístrate con tu correo y disfruta de 14 días gratis, sin tarjeta y sin llamada de ventas.</p>
-        </div>
-        <div class="step">
-          <h3 data-t="s2h">Sube tu inventario</h3>
-          <p data-t="s2p">Sube los PDFs que ya tienes. naah los convierte en fichas con información detallada e incluso con tu porcentaje de comisión.</p>
-        </div>
-        <div class="step">
-          <h3 data-t="s3h">Empieza a trabajar desde Hoy</h3>
-          <p data-t="s3p">Tu pantalla de inicio te muestra qué sigue: a quién contactar, qué documento falta y qué operaciones pueden cerrarse este mes.</p>
+          <a href="#contact" style="margin-top: auto; display: inline-flex; justify-content: center; align-items: center; min-height: 48px; border-radius: 999px; border: 1px solid #34344A; color: #F4F3FA; font-weight: 500; text-decoration: none">Talk about Scale</a>
         </div>
       </div>
     </div>
   </section>
 
-
-  <section id="nosotros" class="sheet">
-    <div class="wrap about">
-      <div>
-        <div class="sechead">
-          <span class="kicker" data-t="k5">Nosotros</span>
-          <h2 data-t="h2e">Hecho en Mérida, para quienes venden en Mérida.</h2>
-        </div>
-        <div class="story">
-          <p data-t="ab1">naah nació dentro de Naah Collective, una inmobiliaria que conecta a inversionistas locales y extranjeros con propiedades en el Centro, Cholul y Conkal.</p>
-          <p data-t="ab2">Mientras trabajábamos con clientes y propiedades, nos dimos cuenta de que los CRMs existentes no estaban pensados para la forma en que se vende aquí: el expediente que pide el notario, los compradores que llegan de otros países y las operaciones que necesitan funcionar en más de un idioma.</p>
-          <p data-t="ab2b">Por eso construimos naah.</p>
-          <p data-t="ab2c">Cada función se probó primero en operaciones reales antes de llegar a ti.</p>
-        </div>
-      </div>
-      <div class="facts">
-        <div class="fact">
-          <h3 data-t="ab3h">Independiente</h3>
-          <p data-t="ab3p">Sin inversionistas externos ni un portal detrás. naah se construye a partir de las necesidades de los asesores que lo utilizan.</p>
-        </div>
-        <div class="fact">
-          <h3 data-t="ab4h">Hecho para Yucatán</h3>
-          <p data-t="ab4p">Zonas, etapas y procesos pensados para el mercado inmobiliario de Yucatán y probados diariamente en operaciones reales.</p>
-        </div>
-        <div class="fact">
-          <h3 data-t="ab5h">Un equipo local y extranjero</h3>
-          <p data-t="ab5p">Somos un equipo de personas locales y extranjeras que vivimos aquí y entendemos ambos lados de la operación.</p>
-        </div>
-      </div>
+  <!-- FAQ -->
+  <section id="faq" style="border-top: 1px solid #1E1E2C">
+    <div style="max-width: 800px; margin: 0 auto; padding: 96px 24px">
+      <h2 style="margin: 0 0 40px; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: clamp(28px, 3.4vw, 40px); letter-spacing: -0.02em">Questions we hear a lot</h2>
+      <details style="border-top: 1px solid #1E1E2C; padding: 22px 0">
+        <summary style="display: flex; justify-content: space-between; gap: 16px; font-size: 18px; font-weight: 500">Do I need to understand AI or code?<span class="faq-plus" style="color: #8B7CF6" aria-hidden="true">+</span></summary>
+        <p style="margin: 12px 0 0; color: #B7B5CA">Not at all. You tell us what your business needs; we handle the technology and explain everything in plain language.</p>
+      </details>
+      <details style="border-top: 1px solid #1E1E2C; padding: 22px 0">
+        <summary style="display: flex; justify-content: space-between; gap: 16px; font-size: 18px; font-weight: 500">How can you build so quickly and affordably?<span class="faq-plus" style="color: #8B7CF6" aria-hidden="true">+</span></summary>
+        <p style="margin: 12px 0 0; color: #B7B5CA">AI tools like Claude speed up design, coding and testing. A small senior team guides and checks the work, so you pay for expertise, not hours.</p>
+      </details>
+      <details style="border-top: 1px solid #1E1E2C; padding: 22px 0">
+        <summary style="display: flex; justify-content: space-between; gap: 16px; font-size: 18px; font-weight: 500">Is my company’s data safe?<span class="faq-plus" style="color: #8B7CF6" aria-hidden="true">+</span></summary>
+        <p style="margin: 12px 0 0; color: #B7B5CA">We only use the data a project needs, work with trusted providers and agree with you upfront how your information is handled.</p>
+      </details>
+      <details style="border-top: 1px solid #1E1E2C; padding: 22px 0">
+        <summary style="display: flex; justify-content: space-between; gap: 16px; font-size: 18px; font-weight: 500">Who owns what you build?<span class="faq-plus" style="color: #8B7CF6" aria-hidden="true">+</span></summary>
+        <p style="margin: 12px 0 0; color: #B7B5CA">You do, once the project is paid in full.</p>
+      </details>
+      <details style="border-top: 1px solid #1E1E2C; border-bottom: 1px solid #1E1E2C; padding: 22px 0">
+        <summary style="display: flex; justify-content: space-between; gap: 16px; font-size: 18px; font-weight: 500">Do you work in Spanish?<span class="faq-plus" style="color: #8B7CF6" aria-hidden="true">+</span></summary>
+        <p style="margin: 12px 0 0; color: #B7B5CA">Yes — we work in English and Spanish with clients across Mexico, LATAM and beyond.</p>
+      </details>
     </div>
   </section>
 
-
-  <section id="precios">
-    <div class="wrap">
-      <div class="sechead mid">
-        <span class="kicker" data-t="k3">Precios</span>
-        <h2 data-t="h2c">Dos planes. Elige el que se adapte a tu forma de trabajar.</h2>
-        <p data-t="p2c">Precios en pesos, con IVA incluido. Sin costo de instalación, sin contrato anual obligatorio y sin cobrar por cada contacto que agregas.</p>
-      </div>
-
-      <div class="plans">
-        <div class="plan">
-          <div class="pname" data-t="pl1n">Individual</div>
-          <div class="pwho" data-t="pl1w">Para asesores que trabajan por su cuenta. Gestiona tus contactos, inventario, recorridos y cierres desde un solo lugar.</div>
-          <div class="price">$199 <span data-t="permo">/ mes</span></div>
-          <div class="iva" data-t="pl1iva">IVA incluido</div>
-          <ul>
-            <li data-t="pl1a">1 usuario</li>
-            <li data-t="pl1b">Inventario y contactos sin límite</li>
-            <li data-t="pl1c">40 lecturas de documentos al mes</li>
-            <li data-t="pl1d">2 GB para fotos y PDFs</li>
-          </ul>
-          <a class="btn btn-ghost js-app" href="#" data-t="pl1cta">Probar 14 días gratis</a>
-        </div>
-
-        <div class="plan featured">
-          <div class="pname" data-t="pl2n">Agencia</div>
-          <div class="pwho" data-t="pl2w">Para equipos de hasta cinco personas. Comparte un mismo inventario mientras cada asesor mantiene sus propios compradores.</div>
-          <div class="price">$499 <span data-t="permo2">/ mes</span></div>
-          <div class="iva" data-t="pl2iva">IVA incluido · $100 por asesor</div>
-          <ul>
-            <li data-t="pl2a">5 usuarios</li>
-            <li data-t="pl2b">Cada asesor ve sus propios compradores</li>
-            <li data-t="pl2c">200 lecturas de documentos al mes</li>
-            <li data-t="pl2d">20 GB para fotos y PDFs</li>
-          </ul>
-          <a class="btn btn-primary js-app" href="#" data-t="pl2cta">Probar 14 días gratis</a>
+  <!-- CONTACT -->
+  <section id="contact" style="border-top: 1px solid #1E1E2C; background: linear-gradient(180deg, #0A0A0F 0%, #15122E 55%, #1E1946 100%)">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 120px 24px; display: flex; flex-wrap: wrap; gap: 56px">
+      <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <h2 style="margin: 0; font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; line-height: 1.1">Let’s talk about your idea.</h2>
+        <p style="margin: 0; color: #B7B5CA">Book a free 30-minute call. You’ll leave with clear next steps, whether or not we work together.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px; font-size: 16px">
+          <a href="https://wa.me/529993355302" style="text-decoration: none">WhatsApp +52 999 335 5302</a>
+          <span style="color: #8E8CA3">Mérida, Yucatán, México</span>
         </div>
       </div>
-
-      <p class="pricenote" data-t="pnote">Los primeros 14 días no tienen costo y no necesitas tarjeta para comenzar. ¿Tienes más de cinco personas en tu equipo? Puedes agregar usuarios adicionales por $99 al mes por persona. Si eliges pagar anualmente, obtienes 12 meses al precio de 10. La tarjeta, las facturas y la cancelación se gestionan de forma segura a través de Stripe: naah nunca guarda los datos de tu tarjeta.</p>
+      <form id="contact-form" style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px; padding: 36px; border: 1px solid #2E2A55; border-radius: 20px; background: #110F22">
+        <label for="c-name" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #B7B5CA">Your name
+          <input id="c-name" name="name" type="text" required autocomplete="name" style="min-height: 48px; padding: 0 16px; border-radius: 12px; border: 1px solid #2A2A3C; background: #0A0A0F; color: #F4F3FA; font: inherit; font-size: 16px">
+        </label>
+        <label for="c-need" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #B7B5CA">I’m interested in
+          <select id="c-need" name="interest" style="min-height: 48px; padding: 0 12px; border-radius: 12px; border: 1px solid #2A2A3C; background: #0A0A0F; color: #F4F3FA; font: inherit; font-size: 16px">
+            <option>Bringing AI into my company</option>
+            <option>Launching a new product</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <label for="c-msg" style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #B7B5CA">Tell us a little about it
+          <textarea id="c-msg" name="message" rows="4" style="padding: 12px 16px; border-radius: 12px; border: 1px solid #2A2A3C; background: #0A0A0F; color: #F4F3FA; font: inherit; font-size: 16px; resize: vertical"></textarea>
+        </label>
+        <button type="submit" style="min-height: 52px; border: 0; border-radius: 999px; background: #8B7CF6; color: #0A0A0F; font: inherit; font-weight: 600; cursor: pointer">Send via WhatsApp</button>
+        <p style="margin: 0; font-size: 13px; color: #8E8CA3">This opens WhatsApp with your message ready to send. By sending it you agree to our <a href="/privacy.html">Privacy Policy</a>.</p>
+      </form>
     </div>
   </section>
 
-
-  <section>
-    <div class="wrap">
-      <div class="refer">
-        <h3 data-t="refh">Recomienda naah y gana meses gratis.</h3>
-        <p data-t="refp">Cuando alguien entra con tu código y hace su primer pago, se te acredita un mes de su plan. El código sirve para 10 registros.</p>
+  <!-- FOOTER -->
+  <footer style="border-top: 1px solid #2E2A55; background: #1E1946">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #A9A5C8">
+      <span>© 2026 Horizon. All rights reserved.</span>
+      <div style="display: flex; gap: 24px">
+        <a href="/privacy.html" style="color: #8E8CA3; text-decoration: none">Privacy</a>
+        <a href="/terms.html" style="color: #8E8CA3; text-decoration: none">Terms</a>
       </div>
     </div>
-  </section>
-
-
-  <section id="por-que" class="sheet">
-    <div class="wrap">
-      <div class="sechead mid">
-        <span class="kicker" data-t="k6">Por qué naah</span>
-        <h2 data-t="h2f">Todo lo que necesitas. Sin complicaciones.</h2>
-      </div>
-      <div class="whys">
-        <div class="why">
-          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="13" height="10" rx="1.5"/><path d="M7 18h5"/><rect x="17" y="9" width="5" height="11" rx="1.2"/></svg>
-          <h3 data-t="w1h">En cualquier pantalla</h3>
-          <p data-t="w1p">Celular, tableta o computadora. Es una página web: nada que instalar y nada que actualizar.</p>
-        </div>
-        <div class="why">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9.5 2.5h5"/></svg>
-          <h3 data-t="w2h">Listo en una tarde</h3>
-          <p data-t="w2p">Sin consultores ni costo de implementación. Sueltas tus PDFs y empiezas a trabajar.</p>
-        </div>
-        <div class="why">
-          <svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.3-4.9L4 8"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0014.3 4.9L20 16"/><path d="M20 20v-4h-4"/></svg>
-          <h3 data-t="w3h">Sincronizado en vivo</h3>
-          <p data-t="w3p">Lo que guardas en el celular ya está en la computadora, y tu equipo lo ve al momento.</p>
-        </div>
-        <div class="why">
-          <svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg>
-          <h3 data-t="w4h">IA incluida</h3>
-          <p data-t="w4p">Lee avalúos, fichas y conversaciones de WhatsApp y llena el formulario. Sin cuentas aparte.</p>
-        </div>
-        <div class="why">
-          <svg viewBox="0 0 24 24"><path d="M20.5 13.5l-7 7a1.5 1.5 0 01-2.1 0L3 12.1V3h9.1l8.4 8.4a1.5 1.5 0 010 2.1z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg>
-          <h3 data-t="w5h">Sin costos ocultos</h3>
-          <p data-t="w5p">Precio en pesos con IVA incluido. Sin cuota de alta, sin contrato anual obligatorio.</p>
-        </div>
-        <div class="why">
-          <svg viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 01-12.4 7.5L3 21l1.5-5.4A8.5 8.5 0 1121 12z"/><path d="M9 11h.01M12 11h.01M15 11h.01"/></svg>
-          <h3 data-t="w6h">Soporte 100% humano</h3>
-          <p data-t="w6p">Escribes por WhatsApp y te contesta una persona que conoce el producto, no un bot.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="preguntas">
-    <div class="wrap">
-      <div class="sechead mid">
-        <span class="kicker" data-t="k4">Preguntas</span>
-        <h2 data-t="h2d">Lo que preguntan antes de entrar.</h2>
-      </div>
-
-      <div class="faq">
-        <details>
-          <summary data-t="q1">¿Mis datos son míos?</summary>
-          <div class="ans" data-t="a1">Sí, y puedes comprobarlo. Un botón exporta todo — cada contacto, inmueble, operación, recorrido y pendiente, con el estado del papeleo y los enlaces a tus archivos — en un solo archivo. Sin pedirlo por correo y sin esperar.</div>
-        </details>
-        <details>
-          <summary data-t="q2">¿Necesito tarjeta para probarlo?</summary>
-          <div class="ans" data-t="a2">No. Los catorce días no piden tarjeta. Si al final no te sirve, no haces nada y se acaba.</div>
-        </details>
-        <details>
-          <summary data-t="q3">¿Qué pasa si dejo de pagar?</summary>
-          <div class="ans" data-t="a3">Tus datos se quedan donde están y los puedes leer, buscar y exportar. Lo que se pausa es agregar y editar, y se reanuda en cuanto vuelvas.</div>
-        </details>
-        <details>
-          <summary data-t="q4">¿Funciona en el celular?</summary>
-          <div class="ans" data-t="a4">Sí. Es una página web, así que se abre en el navegador del celular, de la tablet o de la computadora, sin instalar nada ni pasar por una tienda de apps.</div>
-        </details>
-        <details>
-          <summary data-t="q5">¿Qué hace exactamente la inteligencia artificial?</summary>
-          <div class="ans" data-t="a5">Lee los documentos que tú le sueltas — una ficha técnica, un avalúo, una conversación de WhatsApp — y llena el formulario por ti. No fija precios, no le escribe a nadie y no hace nada que tú no revises y guardes.</div>
-        </details>
-        <details>
-          <summary data-t="q6">¿Sirve fuera de Yucatán?</summary>
-          <div class="ans" data-t="a6">Por ahora está hecho para Yucatán: las zonas, las etapas y el expediente son los de aquí. Si trabajas en otro estado, escríbenos por WhatsApp y te decimos claramente si te sirve.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-
-  <section>
-    <div class="wrap">
-      <div class="band">
-        <h2 data-t="bandh">Pruébalo con tu propia cartera.</h2>
-        <p data-t="bandp">Sube tres propiedades y un comprador. Explora cómo naah puede ayudarte a organizar tu operación y encontrar las propiedades que mejor encajan con cada cliente.</p>
-        <div class="cta">
-          <a class="btn btn-primary js-app" href="#" data-t="bandcta1">Empieza gratis</a>
-          <a class="btn btn-ghost js-wa" href="#" data-t="bandcta2">Prefiero que me lo enseñes</a>
-        </div>
-        <p class="trial">
-          <b data-t="trial1b">14 días gratis</b>
-          <span class="dot">·</span>
-          <span data-t="trial2b">Sin tarjeta</span>
-          <span class="dot">·</span>
-          <span data-t="trial3b">Sin llamada de ventas</span>
-        </p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap foot">
-    <span>© <span id="year">2026</span> naah</span>
-    <a href="terminos.html" data-t="footterms">Términos y condiciones</a>
-    <a href="privacidad.html" data-t="footpriv">Aviso de privacidad</a>
-    <span class="spacer"></span>
-    <a class="js-wa" href="#">WhatsApp</a>
-    <a class="js-app" href="#" data-t="footsignin">Entrar</a>
-  </div>
-</footer>
-
-<a class="wafloat js-wa" href="#" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.4z"/><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2z"/></svg>
-</a>
-
+  </footer>
+</div>
 <script>
-(() => {
-"use strict";
-
-/* The two things that change when the world does. */
-const APP_URL = "https://app.naah.com.mx/";
-const WHATSAPP = "5219993355302";          // +52 1 999 335 5302
-
-
-/* ============================================================
-   Spanish and English
-   ------------------------------------------------------------
-   The page is written in Spanish in the markup, so it reads
-   correctly with JavaScript off and for anything crawling it.
-   English is the swap.
-   ============================================================ */
-const EN = {
-  nav1: "What it does",
-  nav2: "Pricing",
-  nav3: "Questions",
-  signin: "Sign in",
-
-  herok: "Built for realtors, by realtors.",
-  h1: "Everything you need to sell property, in one place.",
-  lede: "Manage your inventory, buyers, viewings and paperwork from one CRM, designed for the way property is sold in Yucatán.",
-  cta1: "Start free",
-  cta2: "Talk to me on WhatsApp",
-  trial1: "14 days free",
-  trial2: "No card",
-  trial3: "No sales call",
-  trial4: "Cancel whenever",
-  trial1b: "14 days free",
-  trial2b: "No card",
-  trial3b: "No sales call",
-
-  heroalt: "The Today screen: buyers, follow-ups, pipeline and commission",
-
-  k1: "What the CRM does",
-  h2a: "naah brings together in one place the tasks that take up most of your time.",
-
-  f1h: "The file you need to close a deal",
-  f1p: "Keep every document for each person and property in one place: escritura, libertad de gravamen, cédula catastral, predial, régimen de condominio and more.",
-  f1k: "Paperwork",
-  f1b1: "Mark what applies",
-  f1b2: "See what is missing",
-  f1b3: "Follow each deal’s progress step by step",
-  f1alt: "A buyer’s file, with progress on every document",
-  f2h: "Turn your PDFs into property listings",
-  f2p: "Upload a factsheet, an avalúo or a developer’s price list and the AI pulls out the information to fill in price, m², bedrooms, handover date, commission and more.",
-  f2k: "AI listings",
-  f2b1: "You check every detail before it is saved",
-  f2b2: "Your own listings, in minutes",
-  f2b3: "40 or 200 document reads a month, depending on your plan",
-  f2alt: "A PDF dropped onto a new-property form",
-  f3h: "Find the properties that actually suit your buyer",
-  f3p: "Enter their budget, the zone they want, how many bedrooms and whether they are buying to live in or to invest. naah ranks your inventory by how well each property fits what they are looking for.",
-  f3k: "Matching",
-  f3b1: "A score from 0 to 100 for every property",
-  f3b2: "The reason for the match always in sight",
-  f3b3: "Precision that saves you time and improves your chances of closing",
-  f3alt: "Inventory ranked against one buyer’s brief",
-  f4h: "Professional viewings, ready to share",
-  f4p: "Organise your route and add the details that matter. naah generates a PDF with your logo so you can share it with your client before the viewing.",
-  f4k: "Viewings",
-  f4b1: "Build the route straight from your buyer’s matches",
-  f4b2: "Pick the properties",
-  f4b3: "Add times and notes at each stop",
-  f4b4: "Share a professional, personalised route",
-  f4alt: "A viewing route with two stops, times and notes",
-  f5h: "Everything you need to know, at a glance",
-  f5p: "See what needs attention, what is holding up a closing and who you need to contact.",
-  f5k: "Follow-up",
-  f5b1: "Keep an easy eye on your pipeline",
-  f5b2: "Check the state of every deal",
-  f5b3: "Look up your commission by month",
-  f5b4: "Spot the clients you haven’t contacted in 14 days or more",
-  f5b5: "Keep your next actions clear, each with a due date",
-  f5alt: "The Today screen: pipeline, paperwork and commission",
-  f6h: "A CRM that speaks your language",
-  f6p: "Work in English or Spanish without duplicating information or running separate processes. Each person picks their own language and everyone works from the same records.",
-  f6k: "Bilingual",
-  f6b1: "Spanish by default, English in one click",
-  f6b2: "Each person picks their language",
-  f6b3: "Foreign buyers and local vendors in one system",
-  f6alt: "Settings: each person picks their own language",
-
-  k2: "Getting started",
-  p2b: "Start working with naah in three steps. No complicated setup, using the information you already have.",
-  h2b: "An afternoon, not a project.",
-  s1h: "Create your account",
-  s1p: "Sign up with your email and get 14 days free, no card and no sales call.",
-  s2h: "Upload your inventory",
-  s2p: "Upload the PDFs you already have. naah turns them into listings with the details filled in, down to your commission.",
-  s3h: "Start working from Today",
-  s3p: "Your home screen shows what is next: who to contact, which document is missing and which deals can close this month.",
-
-  nav4: "About",
-  k5: "About us",
-  h2e: "Made in Mérida, for the people who sell in Mérida.",
-  ab1: "naah grew out of Naah Collective, an agency connecting local and international investors with properties in the Centro, Cholul and Conkal.",
-  ab2: "Working with clients and properties, we realised the CRMs out there were not built for the way selling works here: the file the notary asks for, buyers arriving from other countries, and deals that have to work in more than one language.",
-  ab2c: "Every feature was tried on real deals before it reached you.",
-  ab2b: "So we built naah.",
-  ab3h: "Independent",
-  ab3p: "No outside investors and no portal behind it. naah is built around what the agents using it need.",
-  ab4h: "Built for Yucatán",
-  ab4p: "Zones, stages and processes designed for the Yucatán property market and tested every day on real deals.",
-  ab5h: "A team of locals and expats",
-  ab5p: "We are a team of local and foreign people who live here and understand both sides of a deal.",
-  k6: "Why naah",
-  h2f: "Everything you need. Without the complications.",
-  w1h: "On any screen",
-  w1p: "Phone, tablet or computer. It’s a web page: nothing to install and nothing to update.",
-  w2h: "Ready in an afternoon",
-  w2p: "No consultants and no implementation fee. Drop in your PDFs and get to work.",
-  w3h: "Synced live",
-  w3p: "What you save on your phone is already on your computer, and your team sees it straight away.",
-  w4h: "AI included",
-  w4p: "It reads avalúos, factsheets and WhatsApp threads and fills in the form. No separate accounts.",
-  w5h: "No hidden costs",
-  w5p: "Priced in pesos with IVA included. No signup fee, no compulsory annual contract.",
-  w6h: "100% human support",
-  w6p: "Message on WhatsApp and a person who knows the product answers, not a bot.",
-  k3: "Pricing",
-  h2c: "Two plans. Pick the one that fits how you work.",
-  p2c: "Priced in pesos, IVA included. No setup fee, no compulsory annual contract, and no charging you per contact you add.",
-  pl1n: "Solo",
-  pl1w: "For agents working on their own. Manage your contacts, inventory, viewings and closings from one place.",
-  permo: "/ mo",
-  pl1iva: "IVA included",
-  pl1a: "1 user",
-  pl1b: "Unlimited inventory and contacts",
-  pl1c: "40 document reads a month",
-  pl1d: "2 GB for photos and PDFs",
-  pl1cta: "Try 14 days free",
-  pl2n: "Agency",
-  pl2w: "For teams of up to five. Share one inventory while each agent keeps their own buyers.",
-  permo2: "/ mo",
-  pl2iva: "IVA included · $100 per agent",
-  pl2a: "5 users",
-  pl2b: "Each agent sees their own buyers",
-  pl2c: "200 document reads a month",
-  pl2d: "20 GB for photos and PDFs",
-  pl2cta: "Try 14 days free",
-  pnote: "The first 14 days cost nothing and need no card to start. More than five people on your team? You can add extra users at $99 a month each. Pay annually and you get 12 months for the price of 10. The card, the invoices and cancellation are handled securely through Stripe: naah never stores your card details.",
-
-  refh: "Refer naah and earn free months.",
-  refp: "When someone signs up with your code and makes their first payment, you are credited one month of their plan. The code is good for 10 signups.",
-
-  k4: "Questions",
-  h2d: "What people ask before signing up.",
-  q1: "Is my data mine?",
-  a1: "Yes, and you can prove it. One button exports everything — every contact, property, deal, viewing and task, with paperwork state and the links to your files — in a single file. No emailing support, no waiting.",
-  q2: "Do I need a card to try it?",
-  a2: "No. The fourteen days ask for no card. If it isn't for you at the end, do nothing and it stops.",
-  q3: "What happens if I stop paying?",
-  a3: "Your data stays exactly where it is and you can still read, search and export it. What pauses is adding and editing, and that resumes the moment you come back.",
-  q4: "Does it work on a phone?",
-  a4: "Yes. It's a web page, so it opens in the browser on a phone, a tablet or a computer, with nothing to install and no app store.",
-  q5: "What exactly does the AI do?",
-  a5: "It reads the documents you hand it — a factsheet, an avalúo, a WhatsApp thread — and fills the form in for you. It doesn't set prices, it doesn't message anyone, and it does nothing you haven't checked and saved.",
-  q6: "Is it any use outside Yucatán?",
-  a6: "For now it’s built for Yucatán: the zones, the stages and the paperwork are the ones used here. If you work in another state, message us on WhatsApp and we’ll tell you plainly whether it fits.",
-
-  bandh: "Try it on your own inventory.",
-  bandp: "Load three properties and one buyer. See how naah can help you organise your deals and find the properties that fit each client.",
-  bandcta1: "Start free",
-  bandcta2: "I'd rather you showed me",
-
-  footterms: "Terms and conditions",
-  footpriv: "Privacy notice",
-  footsignin: "Sign in"
-};
-
-/* The Spanish is whatever the markup already says, captured once
-   before anything is swapped — so the two languages can never drift
-   apart in the way a second dictionary would allow. */
-const ES = {};
-document.querySelectorAll("[data-t]").forEach(el => { ES[el.dataset.t] = el.innerHTML; });
-
-/* Image descriptions live in alt, not in the element, so they are
-   captured the same way from their own attribute. */
-document.querySelectorAll("[data-ta]").forEach(el => { ES[el.dataset.ta] = el.alt; });
-
-let lang = "es";
-
-function paint(next) {
-  lang = next;
-  const dict = lang === "en" ? EN : ES;
-  document.querySelectorAll("[data-t]").forEach(el => {
-    const v = dict[el.dataset.t];
-    if (v != null) el.innerHTML = v;
-  });
-  document.documentElement.lang = lang;
-  document.title = lang === "en" ? "naah — real-estate CRM" : "naah — CRM inmobiliario";
-  document.querySelectorAll("[data-lang]").forEach(b => {
-    b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
-  });
-  document.querySelectorAll("[data-ta]").forEach(el => {
-    const v = dict[el.dataset.ta];
-    if (v != null) el.alt = v;
-  });
-  try { localStorage.setItem("naah.site.lang", lang); } catch (e) { /* storage off */ }
-}
-
-function startingLang() {
-  const q = new URLSearchParams(location.search).get("lang");
-  if (q === "en" || q === "es") return q;
-  try {
-    const saved = localStorage.getItem("naah.site.lang");
-    if (saved === "en" || saved === "es") return saved;
-  } catch (e) { /* storage off */ }
-  return /^es\b/i.test(navigator.language || "") ? "es" : "en";
-}
-
-document.querySelectorAll("[data-lang]").forEach(b => {
-  b.addEventListener("click", () => paint(b.dataset.lang));
-});
-
-
-/* ============================================================
-   The links
-   ------------------------------------------------------------
-   A referral code arrives on this page and has to survive the trip
-   into the app, which is where it is redeemed. Losing it here would
-   quietly cost somebody their free month.
-   ============================================================ */
-const ref = (new URLSearchParams(location.search).get("ref") || "")
-  .trim().toUpperCase().slice(0, 12);
-
-const appLink = /^[A-Z0-9]+$/.test(ref)
-  ? APP_URL + (APP_URL.includes("?") ? "&" : "?") + "ref=" + encodeURIComponent(ref)
-  : APP_URL;
-
-document.querySelectorAll(".js-app").forEach(a => { a.href = appLink; });
-
-const waText = () => lang === "en"
-  ? "Hi Josh — I saw the naah site and I'd like to see the CRM."
-  : "Hola Josh — vi la página de naah y me gustaría ver el CRM.";
-
-document.querySelectorAll(".js-wa").forEach(a => {
-  a.target = "_blank";
-  a.rel = "noopener";
-  a.href = "https://wa.me/" + WHATSAPP;
-  a.addEventListener("click", e => {
-    /* Built at click time so the message follows whichever language
-       they are actually reading. */
+(function () {
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
-    window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(waText()),
-                "_blank", "noopener");
+    var name = document.getElementById('c-name').value.trim();
+    var need = document.getElementById('c-need').value;
+    var msg = document.getElementById('c-msg').value.trim();
+    var text = 'Hi Horizon! I'm ' + name + '.\nInterested in: ' + need + (msg ? '\n\n' + msg : '');
+    var url = 'https://wa.me/529993355302?text=' + encodeURIComponent(text);
+    var win = window.open(url, '_blank');
+    if (!win) window.location.href = url;
   });
-});
-
-
-/* ============================================================
-   Small touches
-   ============================================================ */
-document.getElementById("year").textContent = new Date().getFullYear();
-
-const header = document.querySelector("header");
-const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
-addEventListener("scroll", onScroll, { passive: true });
-onScroll();
-
-paint(startingLang());
-
 })();
 </script>
-<!-- Cloudflare Web Analytics. Cookieless and stores nothing in the
-     browser, which is what lets clause 9 of the privacy notice keep
-     saying the site sets no tracking cookies. The token is public by
-     design: it ships in this page and identifies the site, not the
-     account. -->
-<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0ce17af3aefd42b3adac2c09695ae450"}'></script>
-<!-- End Cloudflare Web Analytics -->
 </body>
 </html>
